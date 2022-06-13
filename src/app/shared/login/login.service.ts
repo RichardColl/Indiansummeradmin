@@ -23,13 +23,19 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
+ validate(username: string, password: string) {
 
-  validate(username: string, password: string) {
+    return this.http.post(this.API + '/validatelogin?username=' + username + '&' + 'passw=' + password  , username);
+     //return this.http.get(this.API + '/tendo-items');
+
+}
+  xxvalidate(username: string, password: string) {
 
     httpOptions.headers.append('Access-Control-Allow-Origin', 'https://indiansummeradmin.herokuapp.com');
     httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
+
 
     return this.http.get(this.API + '/validatelogin/?username=' + username + '&' + 'passw=' + password, httpOptions );
        //return this.http.get(this.API + '/tendo-items');
