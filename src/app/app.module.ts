@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { LoginService } from './shared/login/login.service';
 
@@ -25,6 +26,8 @@ import { LoginService } from './shared/login/login.service';
         MatListModule,
         MatSelectModule,
         MatToolbarModule,
+        FormsModule,
+        ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [LoginService],
