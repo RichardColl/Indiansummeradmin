@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginService } from './shared/login/login.service';
 
@@ -29,6 +30,7 @@ import { LoginService } from './shared/login/login.service';
         MatSelectModule,
         MatToolbarModule,
         FormsModule,
+        BrowserAnimationsModule,
         ReactiveFormsModule,
     AppRoutingModule
   ],
