@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
@@ -18,6 +19,7 @@ import { LoginService } from './shared/login/login.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
      MatButtonModule,
         MatMenuModule,
         MatIconModule,
