@@ -12,13 +12,26 @@ import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginService } from './shared/login/login.service';
+import { MusicreleaseService } from './shared/musicrelease/musicrelease.service';
+import { ArtistService } from './shared/artist/artist.service';
+
 import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmin.component';
+import { DisplayeditartistlistComponent } from './displayeditartistlist/displayeditartistlist.component';
+import { DisplayededitmusicreleaselistComponent } from './displayededitmusicreleaselist/displayededitmusicreleaselist.component';
+import { CreateartistformComponent } from './createartistform/createartistform.component';
+import { EditartistformComponent } from './editartistform/editartistform.component';
+import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicreleaseform.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    IndiansummeradminComponent
+    IndiansummeradminComponent,
+    DisplayeditartistlistComponent,
+    DisplayededitmusicreleaselistComponent,
+    CreateartistformComponent,
+    EditartistformComponent,
+    EditmusicreleaseformComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +49,7 @@ import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmi
         ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [LoginService],
+  providers: [LoginService, MusicreleaseService, ArtistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,221 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{musicrelease.title}}</h2></mat-card-title>
+  </mat-card-header>
+
+
+
+  <mat-card-content>
+
+    <form #updatemusicreleaseForm="ngForm"  (ngSubmit)="update(updatemusicreleaseForm.value)">
+
+      <input type="hidden" name="href" [(ngModel)]="musicrelease.href">
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.title" name="ngModel" required name="title" class="form-control" placeholder="Title">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.artistid" name="ngModel" required name="artistid" class="form-control" placeholder="artistid">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.artistname" name="ngModel" required name="artistname" class="form-control" placeholder="artistname">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.shortdescription" name="ngModel" required name="shortdescription" class="form-control" placeholder="shortdescription">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Types</mat-label>
+          <mat-select [(ngModel)] = "musicrelease.type" [formControl]="musictypes" multiple>
+            <mat-option *ngFor="let mtype of musictypesList" [value]="mtype.value">{{mtype}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+
+      </div>
+
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.frontcoverimage" name="ngModel" required name="frontcoverimage" class="form-control" placeholder="frontcoverimage">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.tracks" name="ngModel" required name="tracks" class="form-control" placeholder="tracks">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.display" name="ngModel" required name="display" class="form-control" placeholder="display">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.genres" name="ngModel" required name="genres" class="form-control" placeholder="genres">
+
+
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.releasedate" name="ngModel" required name="releasedate" class="form-control" placeholder="releasedate">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.releaseaddeddate" name="ngModel" required name="releaseaddeddate" class="form-control" placeholder="releaseaddeddate">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.vinylformat" name="ngModel" required name="vinylformat" class="form-control" placeholder="vinylformat">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.label" name="ngModel" required name="label" class="form-control" placeholder="label">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.instock" name="ngModel" required name="instock" class="form-control" placeholder="instock">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.releaseyear" name="ngModel" required name="releaseyear" class="form-control" placeholder="release year">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.barcode" name="ngModel" required name="barcode" class="form-control" placeholder="bar code">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.catalogueno" name="ngModel" required name="catalogueno" class="form-control" placeholder="catalogue no">
+
+
+        </mat-form-field>
+      </div>
+
+
+
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="updatemusicreleaseForm.invalid">Save</button>
+      </mat-card-actions>
+
+    </form>
+
+
+
+  </mat-card-content>
+</mat-card>
+
+
+
