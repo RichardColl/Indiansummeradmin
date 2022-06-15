@@ -12,11 +12,13 @@ import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginService } from './shared/login/login.service';
+import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    IndiansummeradminComponent
   ],
   imports: [
     BrowserModule,
