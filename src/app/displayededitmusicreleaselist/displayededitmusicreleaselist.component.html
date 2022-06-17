@@ -2,7 +2,7 @@
 
   <mat-card-content>
 
-    <div *ngFor="let release of collection.data | paginate: config">
+    <div *ngFor="let release of collection.data">
       <div id="release" fxLayout="row" fxLayoutGap="10">
         <div fxFlex="20%">
           <a id="release" [routerLink]="['/editmusicreleaseform', release.id]" >
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    
   </mat-card-content>
 </mat-card>
 
