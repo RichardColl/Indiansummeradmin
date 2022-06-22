@@ -94,7 +94,7 @@ export class ArtistService {
 
            getAllArtistsByDisplay(): Observable<any> {
                       // don't think theses origin settings are making a difference
-                      httpOptions.headers.append('Access-Control-Allow-Origin', 'https://indiansummeradmin.herokuapp.com');
+                      httpOptions.headers.append('Access-Control-Allow-Origin', 'https://indiansummerrecords.herokuapp.com');
                       httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
                       httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
                       httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
