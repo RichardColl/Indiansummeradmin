@@ -99,7 +99,7 @@ export class ArtistService {
                       httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
                       httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
 
-                      return this.http.get(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions);
+                      return this.http.get(this.API + '/getartistlistbydisplaytrue/');
            }
 
 }
