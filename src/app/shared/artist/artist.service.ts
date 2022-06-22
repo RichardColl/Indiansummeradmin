@@ -93,13 +93,14 @@ export class ArtistService {
           }
 
            getAllArtistsByDisplay(): Observable<any> {
-                      // don't think theses origin settings are making a difference
+                      // don't think theses origin settings are making a difference crossorigin allow origin set
+                      //in the spring boot application java
                       httpOptions.headers.append('Access-Control-Allow-Origin', 'https://indiansummerrecords.herokuapp.com');
                       httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
                       httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
                       httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
 
-                      return this.http.get(this.API + '/getartistlistbydisplaytrue/');
+                      return this.http.get(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions);
            }
 
 }
