@@ -83,14 +83,7 @@ export class MusicreleaseService {
                           return this.http.get(this.TENDOITEM_API + '/'  + 'search/findAllByOrderByReleasedateDesc', httpOptions);
     }
 
-    xfindByArtistid(artistid: string): Observable<any> {
-      httpOptions.headers.append('Access-Control-Allow-Origin', 'https://indiansummerclient.herokuapp.com');
-                httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-                    httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-                    httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
 
-          return this.http.get(this.API + '/getvinylreleasesbyartistid/?ARTISTID=' + artistid, httpOptions);
-        }
 
   getAll(): Observable<any> {
 
@@ -120,5 +113,16 @@ export class MusicreleaseService {
                    return this.http.get(this.API + '/getmusicreleasespaginatedbyreleaseaddeddate/?page=' + thepage + '&size=' + thesize);
       }
 
+
+     getAllMusicReleasesByDisplay(): Observable<any> {
+                          // don't think theses origin settings are making a difference crossorigin allow origin set
+                          //in the spring boot application java
+                          httpOptions.headers.append('Access-Control-Allow-Origin', 'https://indiansummerrecords.herokuapp.com');
+                          httpOptions.headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+                          httpOptions.headers.append('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+                          httpOptions.headers.append('Access-Control-Allow-Credentials', 'true');
+
+                          return this.http.get(this.TENDOITEM_API + '/'  + 'search/findAllByDisplayTrue', httpOptions);
+        }
 
 }
