@@ -42,9 +42,8 @@
 
       <div *ngFor="let theartist of artist.associatedartists">
 
-        <mat-form-field>
-          <input matInput [(ngModel)]="theartist" name="ngModel" required name="theartist" class="form-control" placeholder="theartist">
-        </mat-form-field>
+        <input matInput [(ngModel)]="artist.associatedartists" name="ngModel" required name="associatedartists" class="form-control" placeholder="associated artists">
+
       </div>
 
       <mat-card-actions>
