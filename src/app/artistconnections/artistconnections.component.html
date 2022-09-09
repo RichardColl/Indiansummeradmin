@@ -1,1 +1,60 @@
-<p>artistconnections works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{artist.name}}</h2></mat-card-title>
+  </mat-card-header>
+
+
+
+  <mat-card-content>
+
+    <form #updateartistForm="ngForm"  (ngSubmit)="update(updateartistForm.value)">
+
+      <input type="hidden" name="href" [(ngModel)]="artist.href">
+
+      <mat-form-field>
+
+
+
+        <input matInput [(ngModel)]="artist.name" name="ngModel" required name="name" class="form-control" placeholder="Name">
+
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput [(ngModel)]="artist.menuimage" name="ngModel" required name="menuimage" class="form-control" placeholder="Menu image">
+
+
+      </mat-form-field>
+
+
+      <mat-form-field>
+
+        <input matInput [(ngModel)]="artist.history" name="ngModel" required name="history" class="form-control" placeholder="History">
+
+      </mat-form-field>
+
+      <div *ngFor="let theartist of artist.associatedartists">
+
+        <input matInput [(ngModel)]="artist.associatedartists" name="ngModel" required name="associatedartists" class="form-control" placeholder="associated artists">
+
+      </div>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="updateartistForm.invalid">Save</button>
+      </mat-card-actions>
+
+    </form>
+
+
+
+  </mat-card-content>
+</mat-card>
+
+<mat-toolbar color="primary">
+
+
+  <a mat-button [routerLink]="['/artistconnectionscomponent', artist.id]">Add Artist Connections</a>
+
+</mat-toolbar>
+

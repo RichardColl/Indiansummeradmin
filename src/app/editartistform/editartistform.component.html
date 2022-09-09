@@ -53,8 +53,8 @@
 
 <mat-toolbar color="primary">
 
-  <button mat-button routerLink="/artistconnectionscomponent">Add Artist Connections</button>
 
+  <a mat-button [routerLink]="['/artistconnectionscomponent', artist.id]">Add Artist Connections</a>
 
 </mat-toolbar>
 

@@ -39,7 +39,7 @@ const routes: Routes = [
                                                        component: DisplayeditartistlistComponent
 
                                                     }, {
-                                                       path: 'artistconnectionscomponent',
+                                                       path: 'artistconnectionscomponent/:artistid',
                                                        component: ArtistconnectionsComponent
 
                                                     }, {
