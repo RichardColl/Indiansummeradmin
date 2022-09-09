@@ -21,6 +21,7 @@ import { DisplayededitmusicreleaselistComponent } from './displayededitmusicrele
 import { CreateartistformComponent } from './createartistform/createartistform.component';
 import { EditartistformComponent } from './editartistform/editartistform.component';
 import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicreleaseform.component';
+import { ArtistconnectionsComponent } from './artistconnections/artistconnections.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicr
     DisplayededitmusicreleaselistComponent,
     CreateartistformComponent,
     EditartistformComponent,
-    EditmusicreleaseformComponent
+    EditmusicreleaseformComponent,
+    ArtistconnectionsComponent
   ],
   imports: [
     BrowserModule,
