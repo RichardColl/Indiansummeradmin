@@ -8,7 +8,7 @@ import { EditartistformComponent } from './editartistform/editartistform.compone
 import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicreleaseform.component';
 import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmin.component';
 import { DisplayededitmusicreleaselistComponent } from './displayededitmusicreleaselist/displayededitmusicreleaselist.component';
-
+import { ArtistconnectionsComponent } from './artistconnections/artistconnections.component';
 
 const routes: Routes = [
                          {
@@ -37,6 +37,10 @@ const routes: Routes = [
                                                    }, {
                                                        path: 'displayeditartistlist',
                                                        component: DisplayeditartistlistComponent
+
+                                                    }, {
+                                                       path: 'artistconnectionscomponent',
+                                                       component: ArtistconnectionsComponent
 
                                                     }, {
                                                        path: 'displayededitmusicreleaselist',
