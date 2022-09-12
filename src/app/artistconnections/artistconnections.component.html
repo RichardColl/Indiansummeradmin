@@ -11,7 +11,28 @@
 
       <input type="hidden" name="href" [(ngModel)]="artist.href">
 
+      <mat-form-field>
 
+
+
+        <input matInput [(ngModel)]="artist.name" name="ngModel" required name="name" class="form-control" placeholder="Name">
+
+
+      </mat-form-field>
+
+      <mat-form-field>
+
+        <input matInput [(ngModel)]="artist.menuimage" name="ngModel" required name="menuimage" class="form-control" placeholder="Menu image">
+
+
+      </mat-form-field>
+
+
+      <mat-form-field>
+
+        <input matInput [(ngModel)]="artist.history" name="ngModel" required name="history" class="form-control" placeholder="History">
+
+      </mat-form-field>
 
       <div *ngFor="let theartist of artist.associatedartists">
 
@@ -33,7 +54,7 @@
 <mat-toolbar color="primary">
 
   <button mat-button routerLink="/indiansummeradmin">Admin home</button>
-  
+
 
 </mat-toolbar>
 
