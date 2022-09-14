@@ -37,7 +37,7 @@ export class ArtistconnectionsComponent implements OnInit {
 
      update(form: NgForm): void{
 
-               this.artistService.update(form)
+               this.artistService.updateconnection(form)
                      .subscribe(
                             data => {
                                  this.router.navigate([this.returnUrl]);

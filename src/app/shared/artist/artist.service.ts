@@ -46,6 +46,14 @@ export class ArtistService {
              return result;
      }
 
+     updateconnection(artist: any): Observable<any> {
+
+
+           return this.http.post(this.API + '/updateconnection/?artid=' + artist.href + '&conn=' + artist.connection, httpOptions);
+
+
+      }
+
      //previous working version before using self link
      //not sure httpOptions making any difference
      updateold(id: string, artist: any): Observable<any> {
