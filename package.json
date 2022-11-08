@@ -11,6 +11,9 @@
     "postinstall": "ng build --output-path dist"
   },
   "private": true,
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.7",
     "@angular/cdk": "^7.0.2",
