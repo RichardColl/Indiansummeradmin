@@ -28,7 +28,7 @@ export class DisplayeditartistlistComponent implements OnInit {
   ngOnInit() {
 
 
-              this.artistService.getAll().subscribe(data => {
+              this.artistService.getAllArtistsByDisplay().subscribe(data => {
 
                      if (data) {
 
