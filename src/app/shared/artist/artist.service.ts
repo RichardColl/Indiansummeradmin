@@ -7,7 +7,7 @@ import { Observable , BehaviorSubject} from 'rxjs';
 import { View, PageData, ViewData, ViewError } from '../../models/view';
 import { ArtistServiceData } from '../artist.abstract.service';
 import { ServiceState } from '../main-api.service';
-import { ArtistData } from '../artist.abstract.service';
+import { ArtistCollection } from '../artist.abstract.service';
 import { catchError, map, tap} from 'rxjs/operators';
 
 
@@ -185,7 +185,7 @@ export class ArtistService {
                      });
 
                      return  this.http
-                          .get<ArtistData>(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions)
+                          .get<ArtistCollection>(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions)
                           .pipe(
                              tap(data => {
                                  this._serviceData$.next({

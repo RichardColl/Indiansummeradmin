@@ -8,10 +8,17 @@ export interface ArtistData {
     history: string;
 }
 
+export interface ArtistCollection {
+   theartists: Array<ArtistData>;
+}
+
+
+
+
 export interface ArtistServiceData {
 
     artistServiceState: ServiceState;
-    artistDetails: ArtistData;
+    artistDetails: ArtistCollection;
 
 
 

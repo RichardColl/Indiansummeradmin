@@ -26,6 +26,8 @@ export class DisplayeditartistlistComponent implements OnInit {
     collection = { count: 6, data: [] };
     thedata:any;
 
+
+
   ServiceStateEnum = ServiceState;
 
   constructor(private route: ActivatedRoute, private artistService: ArtistService) { }
@@ -36,7 +38,9 @@ export class DisplayeditartistlistComponent implements OnInit {
           //alert("in the map");
           if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
           //alert("musicReleaseDetails successzzzz");
-            this.thedata = artistDetails;
+          //  this.thedata = artistDetails;
+            //this.collection.data = data._embedded.artists;
+            this.thedata = artistDetails.theartists;
             //  const { id, title } = musicReleaseDetails;
              // alert(id);
              // alert(title);
