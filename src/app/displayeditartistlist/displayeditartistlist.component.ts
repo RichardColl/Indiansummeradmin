@@ -42,6 +42,7 @@ export class DisplayeditartistlistComponent implements OnInit {
             //this.collection.data = data._embedded.artists;
             //this.thedata = artistDetails.theartists;
             this.thedata = artistDetails;
+            this.collection.data = this.thedata._embedded.artists;
 
             //  const { id, title } = musicReleaseDetails;
              // alert(id);
