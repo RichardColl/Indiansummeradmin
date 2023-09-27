@@ -3,7 +3,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable , BehaviorSubject} from 'rxjs';
+import { View, PageData, ViewData, ViewError } from '../../models/view';
+import { ArtistServiceData } from '../artist.abstract.service';
+import { ServiceState } from '../main-api.service';
+import { ArtistData } from '../artist.abstract.service';
+import { catchError, map, tap} from 'rxjs/operators';
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -20,8 +27,66 @@ export class ArtistService {
     public API = '//indiansummerrecordsserver.herokuapp.com';
     public ARTIST_API = this.API + '/artist';
 
+    private _view$ = new BehaviorSubject<View<PageData>>(undefined);
+
+    private _serviceData$:BehaviorSubject<ArtistServiceData>
+                       = new BehaviorSubject({
+                                artistServiceState: ServiceState.INITIAL,
+                                artistDetails: null
+
+            });
+    serviceData$ = this._serviceData$.asObservable();
+
 
     constructor(private http: HttpClient) { }
+
+    get view$(): Observable<View<PageData>> {
+        return this._view$.asObservable();
+    }
+
+    generateData(): void {
+        const data: ViewData<PageData> = {
+          data: {
+            header: 'header',
+            moreText: 'more text',
+            text: 'text',
+          }
+        };
+
+        this._view$.next(data)
+      }
+
+      generateError(): void {
+        const error: ViewError = {
+          error:  {
+            message: 'error message',
+            name: 'error name'
+          }
+        };
+
+        this._view$.next(error);
+      }
+
+      generateLoading(): void {
+        const viewLoader: View<PageData> = {
+          loader: true
+        };
+
+        this._view$.next(viewLoader);
+      }
+
+      generateSkeletonLoading(): void {
+        const viewLoader: View<PageData> = {
+          loader: true,
+          data: {
+            header: 'XXXXX',
+            moreText: 'XXXXX',
+            text: 'XXXXX',
+          }
+        };
+
+        this._view$.next(viewLoader);
+      }
 
     save(artist: any): Observable<any> {
 
@@ -110,5 +175,36 @@ export class ArtistService {
 
                       return this.http.get(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions);
            }
+
+
+             getArtistsByDisplay()    {
+
+                     this._serviceData$.next( {
+                         ...this._serviceData$.value,
+                         artistServiceState: ServiceState.IN_PROGRESS
+                     });
+
+                     return  this.http
+                          .get<ArtistData>(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions)
+                          .pipe(
+                             tap(data => {
+                                 this._serviceData$.next({
+                                    ...this._serviceData$.value,
+                                    artistServiceState: ServiceState.SUCCESS,
+                                    artistDetails: data
+                                 });
+                             }),
+                             catchError(err => {
+                                 this._serviceData$.next({
+                                   ...this._serviceData$.value,
+                                   artistServiceState: ServiceState.ERROR
+                                 });
+                                 return [];
+                              })
+                           )
+                           .subscribe();
+
+               }
+
 
 }
