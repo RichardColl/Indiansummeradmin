@@ -7,7 +7,7 @@
     </div>
 
 
-    <div *ngFor="let release of thedata">
+    <div *ngFor="let release of collection.data">
       <div id="release" fxLayout="row" fxLayoutGap="10">
         <div fxFlex="20%">
           <a id="gotoartist" [routerLink]="['/editartistform', release.id]" >
