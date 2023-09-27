@@ -1,22 +1,45 @@
-<div>
-  <ng-container *viewContainer="view$ | async;
-                          main mainTmp;
-                          error errorTmp;
-                          loading loaderTmp">
-  </ng-container>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{artist.name}}</h2></mat-card-title>
+  </mat-card-header>
 
-<ng-template #mainTmp let-v="view">
-  <h4> {{ v.data.header }} </h4>
-  <p> {{ v.data.text }} </p>
-  <p> {{ v.data.moreText }} </p>
-</ng-template>
 
-<ng-template #errorTmp let-v="view">
-  <div>Error: {{ v.error.message }} </div>
-</ng-template>
 
-<ng-template #loaderTmp let-v="view">
-  <div>Loading...</div>
-</ng-template>
+  <mat-card-content>
 
+    <form #updateartistForm="ngForm"  (ngSubmit)="update(updateartistForm.value)">
+
+      <input type="hidden" name="href" [(ngModel)]="artist.href">
+
+      <mat-form-field>
+
+
+
+        <input matInput [(ngModel)]="artist.connection" name="ngModel" required name="connection" class="form-control" placeholder="Connection">
+
+
+      </mat-form-field>
+
+
+
+
+
+
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="updateartistForm.invalid">Save</button>
+      </mat-card-actions>
+
+    </form>
+
+
+
+  </mat-card-content>
+</mat-card>
+
+<mat-toolbar color="primary">
+
+  <button mat-button routerLink="/indiansummeradmin">Admin home</button>
+
+
+</mat-toolbar>

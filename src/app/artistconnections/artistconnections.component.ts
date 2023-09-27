@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Subscription, Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ArtistService } from '../shared/artist/artist.service';
 import { Artist } from '../models/artist.model';
 
 import { NgForm } from '@angular/forms';
-
-
-import { View, PageData } from '../models/view';
-
 
 @Component({
   selector: 'app-artistconnections',
@@ -37,8 +33,6 @@ export class ArtistconnectionsComponent implements OnInit {
 
       returnUrl: string;
 
-      view$: Observable<View<PageData>>;
-
     constructor(private route: ActivatedRoute, private router: Router, private artistService: ArtistService) { }
 
      update(form: NgForm): void{
@@ -56,14 +50,31 @@ export class ArtistconnectionsComponent implements OnInit {
      }
 
 
-     ngOnInit(): void {
-        this.view$ = this.artistService.view$;
-      }
+    ngOnInit() {
+
+               this.sub = this.route.params.subscribe(params => {
+                     const id = params['artistid'];
+                     this.theid = params['artistid'];
+               //      alert(id);
+                     if (id) {
+                       this.artistService.get(id).subscribe((artist: any) => {
+                         if (artist) {
+                           this.artist = artist;
+                           this.artist.href = artist._links.self.href;
+                 //          alert(this.car.frontcoverimage);
+                          this.imgurl = "https://indiansummerrecordsserver.herokuapp.com/images/" + this.artist.menuimage;
+                         // this.history = this.artist.history;
+
+                         } else {
+                           console.log(`Car with id '${id}' not found, returning to list`);
+
+                         }
+                       });
+                     }
+                   });
 
 
 
 
-
-
-        }
-
+    }
+    }
