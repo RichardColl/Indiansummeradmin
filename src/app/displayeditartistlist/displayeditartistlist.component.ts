@@ -40,10 +40,13 @@ export class DisplayeditartistlistComponent implements OnInit {
           //alert("musicReleaseDetails successzzzz");
           //  this.thedata = artistDetails;
             //this.collection.data = data._embedded.artists;
-            this.thedata = artistDetails.theartists;
+            //this.thedata = artistDetails.theartists;
+            this.thedata = artistDetails;
+
             //  const { id, title } = musicReleaseDetails;
              // alert(id);
              // alert(title);
+             var i = 0;
              // alert(musicReleaseDetails);
            //console.log("the array " + musicReleaseDetails.toString());
           // alert(musicReleaseDetails._embedded.musicReleases[0].artistid);
