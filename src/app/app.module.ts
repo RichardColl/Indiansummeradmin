@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -46,6 +47,7 @@ import { ArtistconnectionsComponent } from './artistconnections/artistconnection
         MatListModule,
         MatSelectModule,
         MatToolbarModule,
+        MatProgressSpinnerModule,
         FormsModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,

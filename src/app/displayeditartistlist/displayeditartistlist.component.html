@@ -3,10 +3,10 @@
   <mat-card-content>
 
     <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
-      inPROGRESSSSSSSSSS
+      <mat-spinner color="primary"></mat-spinner>
     </div>
 
-
+    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
     <div *ngFor="let release of collection.data">
       <div id="release" fxLayout="row" fxLayoutGap="10">
         <div fxFlex="20%">
@@ -20,6 +20,7 @@
 
         </div>
       </div>
+    </div>
     </div>
 
   </mat-card-content>
