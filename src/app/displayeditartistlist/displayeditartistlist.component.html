@@ -2,6 +2,11 @@
 
   <mat-card-content>
 
+    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+      inPROGRESSSSSSSSSS
+    </div>
+
+
     <div *ngFor="let release of thedata">
       <div id="release" fxLayout="row" fxLayoutGap="10">
         <div fxFlex="20%">
