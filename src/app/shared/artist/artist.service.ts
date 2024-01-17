@@ -114,7 +114,7 @@ export class ArtistService {
      updateconnection(artist: any): Observable<any> {
 
 
-           return this.http.post(this.API + '/updateconnection/?artid=' + artist.href + '&conn=' + artist.connection, httpOptions);
+           return this.http.post(this.API + '/updateconnection/?artid=' + artist.id + '&conn=' + artist.connection, httpOptions);
 
 
       }
