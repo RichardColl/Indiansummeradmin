@@ -60,6 +60,7 @@ export class ArtistconnectionsComponent implements OnInit {
                        this.artistService.get(id).subscribe((artist: any) => {
                          if (artist) {
                            this.artist = artist;
+                           this.artist.id = id;
                            this.artist.href = artist._links.self.href;
                  //          alert(this.car.frontcoverimage);
                           this.imgurl = "https://indiansummerrecordsserver.herokuapp.com/images/" + this.artist.menuimage;
