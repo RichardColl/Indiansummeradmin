@@ -14,6 +14,7 @@ export class CreateartistformComponent implements OnInit {
   artist = new Artist();
 
   returnUrl: string;
+  result:string;
 
   constructor( private route: ActivatedRoute,  private router: Router, private artistServ: ArtistService ) {
       }
@@ -26,11 +27,13 @@ export class CreateartistformComponent implements OnInit {
                this.artistServ.save(artist)
                          .subscribe(
                              data => {
+                             if (data) {
+                                  this.result = "successful Create -- Artist ";
+                              }
                                  this.router.navigate([this.returnUrl]);
                              },
                              error => {
-                                // this.alertService.error(error);
-                                // this.loading = false;
+                                this.result = "create artist  failed";
                              });
 
 

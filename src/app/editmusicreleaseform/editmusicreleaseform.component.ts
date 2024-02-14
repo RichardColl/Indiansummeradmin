@@ -30,6 +30,7 @@ export class EditmusicreleaseformComponent implements OnInit {
       imgurl: string;
       history: string;
       theid: string;
+      result:string;
 
       href: string;
 
@@ -43,11 +44,13 @@ export class EditmusicreleaseformComponent implements OnInit {
                this.musicreleaseService.update(form)
                      .subscribe(
                             data => {
+                                if (data) {
+                                      this.result = "successful update to -- Music release ";
+                                 }
                                  this.router.navigate([this.returnUrl]);
                                           },
                                           error => {
-                                             // this.alertService.error(error);
-                                             // this.loading = false;
+                                             this.result = "music release update failed";
                                           });
 
      }

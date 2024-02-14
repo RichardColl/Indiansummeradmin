@@ -28,6 +28,7 @@ export class ArtistconnectionsComponent implements OnInit {
       theid: string;
 
       href: string;
+      result:string;
 
       editartist = new Artist();
 
@@ -40,11 +41,13 @@ export class ArtistconnectionsComponent implements OnInit {
                this.artistService.updateconnection(form)
                      .subscribe(
                             data => {
+                                if (data) {
+                                     this.result = "successful update to -- Artist Connections";
+                                 }
                                  this.router.navigate([this.returnUrl]);
                                           },
                                           error => {
-                                             // this.alertService.error(error);
-                                             // this.loading = false;
+                                             this.result = "artist connections update failed";
                                           });
 
      }

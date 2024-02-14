@@ -39,13 +39,12 @@ export class EditartistformComponent implements OnInit {
                    .subscribe(
                           data => {
                               if (data) {
-                                this.result = "successful update to -- ";
+                                this.result = "successful update to -- Artist ";
                               }
                                this.router.navigate([this.returnUrl]);
                                         },
                                         error => {
-                                           // this.alertService.error(error);
-                                           // this.loading = false;
+                                           this.result = "artist update failed";
                                         });
 
    }
