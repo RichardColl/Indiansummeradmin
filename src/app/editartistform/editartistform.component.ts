@@ -65,7 +65,7 @@ export class EditartistformComponent implements OnInit {
                //          alert(this.car.frontcoverimage);
                         this.imgurl = "https://indiansummerrecordsserver.herokuapp.com/images/" + this.artist.menuimage;
                        // this.history = this.artist.history;
-                       this.result = "---";
+                       this.result = "Ready to Update Artist";
 
                        } else {
                          console.log(`Car with id '${id}' not found, returning to list`);
