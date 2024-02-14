@@ -20,7 +20,9 @@ export class CreateartistformComponent implements OnInit {
       }
 
   ngOnInit() {
+    this.result = "Ready to Create Artist";
   }
+
 
    register(artist: Artist): void{
 

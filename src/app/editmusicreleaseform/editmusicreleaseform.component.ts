@@ -70,6 +70,7 @@ export class EditmusicreleaseformComponent implements OnInit {
                  //          alert(this.car.frontcoverimage);
                           //this.imgurl = "https://indiansummerserver.herokuapp.com/images/" + this.artist.menuimage;
                          // this.history = this.artist.history;
+                          this.result = "Ready to Update MusicRelease";
 
                          } else {
                            console.log(`Car with id '${id}' not found, returning to list`);
