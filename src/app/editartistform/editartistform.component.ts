@@ -25,6 +25,7 @@ export class EditartistformComponent implements OnInit {
     theid: string;
 
     href: string;
+    result:string;
 
     editartist = new Artist();
 
@@ -37,6 +38,9 @@ export class EditartistformComponent implements OnInit {
              this.artistService.update(form)
                    .subscribe(
                           data => {
+                              if (data) {
+                                this.result = "successful update to -- ";
+                              }
                                this.router.navigate([this.returnUrl]);
                                         },
                                         error => {
@@ -61,6 +65,7 @@ export class EditartistformComponent implements OnInit {
                //          alert(this.car.frontcoverimage);
                         this.imgurl = "https://indiansummerrecordsserver.herokuapp.com/images/" + this.artist.menuimage;
                        // this.history = this.artist.history;
+                       this.result = "---";
 
                        } else {
                          console.log(`Car with id '${id}' not found, returning to list`);
