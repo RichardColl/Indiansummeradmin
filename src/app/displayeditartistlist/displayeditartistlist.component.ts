@@ -30,7 +30,7 @@ export class DisplayeditartistlistComponent implements OnInit {
 
   ServiceStateEnum = ServiceState;
 
-  constructor(private route: ActivatedRoute, private artistService: ArtistService) { }
+  constructor(private artistService: ArtistService) { }
 
   displayArtistsOptionsState$:Observable<ServiceState>
         = this.artistService.serviceData$.pipe(
