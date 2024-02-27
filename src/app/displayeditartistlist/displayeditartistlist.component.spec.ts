@@ -34,6 +34,8 @@ const overrideArtistlistprovider = artlistrespData => {
 describe('DisplayeditartistlistComponent', () => {
   let component: DisplayeditartistlistComponent;
   let fixture: ComponentFixture<DisplayeditartistlistComponent>;
+  let tmpArtistSrv;
+  let debugElement: DebugElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -57,16 +59,16 @@ describe('DisplayeditartistlistComponent', () => {
       declarations: [ DisplayeditartistlistComponent ]
     })
     .compileComponents();
+
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayeditartistlistComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+describe('verify we create component', () => {
+  it('should create DisplayeditartistlistComponent', () => {
 
-  it('should create', () => {
-
+        fixture = TestBed.createComponent(DisplayeditartistlistComponent);
+                          component = fixture.componentInstance;
+                          debugElement = fixture.debugElement;
+                          fixture.detectChanges();
       const theartist = {
           id: 123,
           name: 'abc',
@@ -80,6 +82,64 @@ describe('DisplayeditartistlistComponent', () => {
       overrideArtistlistprovider(theartist);
 
    expect(component).toBeTruthy();
+
+
+  });
+
+  it('verify init service call', () => {
+
+        fixture = TestBed.createComponent(DisplayeditartistlistComponent);
+                          component = fixture.componentInstance;
+                          debugElement = fixture.debugElement;
+                          fixture.detectChanges();
+         tmpArtistSrv = debugElement.injector.get(ArtistService);
+
+         spyOn(tmpArtistSrv, 'getArtistsByDisplay').and.returnValue({});
+         component.ngOnInit();
+
+         expect(tmpArtistSrv.getArtistsByDisplay).toHaveBeenCalledTimes(1);
+
+
+
+    });
+
+     afterEach(() => {
+            fixture.destroy();
+          });
+
+  });
+
+
+  describe('calculate the state from data', () => {
+
+        it('verify init service call', () => {
+            //we mock up the artistservice observable
+            //and give it an in progress state
+
+            fixture = TestBed.createComponent(DisplayeditartistlistComponent);
+                    component = fixture.componentInstance;
+                    debugElement = fixture.debugElement;
+                    fixture.detectChanges();
+            TestBed.overrideProvider(ArtistService, {
+                    useValue: {
+                        serviceData$: of({
+                            artistServiceState: ServiceState.IN_PROGRESS,
+                            artistDetails: {}
+
+                        })
+                    }
+             });
+
+            //access the components observable in progress state
+            component.displayArtistsOptionsState$.subscribe(viewState => {
+                expect(viewState).toBe(ServiceState.IN_PROGRESS);
+            });
+
+
+
+
+     });
+
   });
 
 
