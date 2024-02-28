@@ -142,6 +142,41 @@ describe('verify we create component', () => {
 
   });
 
+//this last test won't work error thrown in afterAll
+//need to fix later
+//problem is when and where to create the fixture and component
+//and make them withing async or sync calls ????
+describe('calculate the state from data', () => {
+   it('verify init service call', () => {
+          //we mock up the artistservice observable
+          //and give it an in progress state
+
+          fixture = TestBed.createComponent(DisplayeditartistlistComponent);
+                  component = fixture.componentInstance;
+                  debugElement = fixture.debugElement;
+                  fixture.detectChanges();
+
+          const theartist = {
+                    id: 123,
+                    name: 'abc',
+                    menuimage: 'def',
+                    history: 'ghi'
+           }
+
+           //fix this later
+           //this would probably need to be an array of artist objects rather that one artist const
+           //the _embedded structure probably complicates things ???
+           overrideArtistlistprovider(theartist);
+
+          //access the components observable in progress state
+          component.displayArtistsOptionsState$.subscribe(viewState => {
+              expect(viewState).toBe(ServiceState.SUCCESS);
+          });
+
+
+
+   });
+});
 
 
 });
