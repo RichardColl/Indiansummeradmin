@@ -13,7 +13,7 @@ import { ArtistconnectionsComponent } from './artistconnections/artistconnection
 const routes: Routes = [
                          {
                            path: '',
-                           component: IndiansummeradminComponent
+                           component: LoginComponent
 
                          }
                           , {
