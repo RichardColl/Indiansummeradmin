@@ -57,6 +57,8 @@ import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.c
         ReactiveFormsModule,
     AppRoutingModule
   ],
+  exports: [ArtistscontainerComponent],
+  declarations: [ArtistscontainerComponent],
   providers: [LoginService, MusicreleaseService, ArtistService],
   bootstrap: [AppComponent]
 })
