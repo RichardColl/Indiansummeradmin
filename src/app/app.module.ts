@@ -23,6 +23,8 @@ import { CreateartistformComponent } from './createartistform/createartistform.c
 import { EditartistformComponent } from './editartistform/editartistform.component';
 import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicreleaseform.component';
 import { ArtistconnectionsComponent } from './artistconnections/artistconnections.component';
+import { ArtistlistsummaryComponent } from './artistlistsummary/artistlistsummary.component';
+import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ArtistconnectionsComponent } from './artistconnections/artistconnection
     CreateartistformComponent,
     EditartistformComponent,
     EditmusicreleaseformComponent,
-    ArtistconnectionsComponent
+    ArtistconnectionsComponent,
+    ArtistlistsummaryComponent,
+    ArtistscontainerComponent
   ],
   imports: [
     BrowserModule,

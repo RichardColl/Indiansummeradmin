@@ -1,18 +1,5 @@
 <mat-card>
 
-  <mat-card-content>
-
-    <div *ngIf="( displayUtilsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
-      <mat-spinner color="primary"></mat-spinner>
-    </div>
-
-    <div *ngIf="( displayUtilsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
-            <h3>{{thedata.title}}</h3>
-
-    </div>
-
-
-  </mat-card-content>
 
 
   <mat-card-header>

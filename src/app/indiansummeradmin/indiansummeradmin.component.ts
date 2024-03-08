@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule, MatMenuModule, MatIconModule} from '@angular/material';
+import { TrackServiceData } from '../shared/utils.abstract.service';
+import { Observable , BehaviorSubject} from 'rxjs';
+import { UtilsService } from '../shared/utils/utils.service';
+import { AdminListener, AdminType } from '../shared/utils/listener.service';
+import { ArtistServiceData } from '../shared/artist.abstract.service';
+
 
 @Component({
   selector: 'app-indiansummeradmin',
@@ -9,7 +15,29 @@ import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolb
 })
 export class IndiansummeradminComponent implements OnInit {
 
-  constructor() { }
+
+  private _musicid: '';
+  public headerData$: Observable<TrackServiceData>;
+  public artistsData$: Observable<ArtistServiceData>;
+
+ // @Input()
+ // public set headers(mid: '62ded9a846e6d74f4d560805') {
+
+//      this._musicid = mid;
+//      this.utilsService.getMusicReleaseId(this._musicid);
+//  }
+
+  constructor(private utilsService: UtilsService, private readonly adminListener: AdminListener) {
+    this.setupAdminListeners();
+  }
+
+  public setupAdminListeners(){
+
+    this.headerData$ = this.utilsService.trackData$;
+
+    this.artistsData$ = this.adminListener.listen(AdminType.ARTIST_LIST) as Observable<ArtistServiceData>;
+
+  }
 
   ngOnInit() {
   }
