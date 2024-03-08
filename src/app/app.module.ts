@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -25,6 +25,7 @@ import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicr
 import { ArtistconnectionsComponent } from './artistconnections/artistconnections.component';
 import { ArtistlistsummaryComponent } from './artistlistsummary/artistlistsummary.component';
 import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.component';
+import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicreleasescontainer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.c
     EditmusicreleaseformComponent,
     ArtistconnectionsComponent,
     ArtistlistsummaryComponent,
-    ArtistscontainerComponent
+    ArtistscontainerComponent,
+    MusicreleasescontainerComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +59,12 @@ import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.c
         ReactiveFormsModule,
     AppRoutingModule
   ],
-  exports: [ArtistscontainerComponent],
-  declarations: [ArtistscontainerComponent],
   providers: [LoginService, MusicreleaseService, ArtistService],
+  exports: [ArtistscontainerComponent, MusicreleasescontainerComponent],
+  schemas: [
+
+      NO_ERRORS_SCHEMA
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
