@@ -11,7 +11,7 @@ import { ArtistData } from '../shared/artist.abstract.service';
 import { ArtistServiceData } from '../shared/artist.abstract.service';
 
 @Component({
-  selector: 'app-artistscontainer',
+  selector: 'artistscontainer',
   templateUrl: './artistscontainer.component.html',
   styleUrls: ['./artistscontainer.component.css']
 })
