@@ -19,6 +19,7 @@ export class ArtistscontainerComponent implements OnInit {
 
       collection = { count: 6, data: [] };
       thedata:any;
+      result = [];
 
       ServiceStateEnum = ServiceState;
 
@@ -31,6 +32,9 @@ export class ArtistscontainerComponent implements OnInit {
             if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
               this.thedata = artistDetails;
               this.collection.data = this.thedata._embedded.artists;
+              for (let i = 0; i < 3; i++) {
+                     this.result.push(this.collection.data[i]);
+               }
 
             }
 
