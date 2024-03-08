@@ -16,9 +16,9 @@ import { ArtistServiceData } from '../shared/artist.abstract.service';
 export class IndiansummeradminComponent implements OnInit {
 
 
-  private _musicid: '';
-  public headerData$: Observable<TrackServiceData>;
-  public artistsData$: Observable<ArtistServiceData>;
+ // private _musicid: '';
+ // public headerData$: Observable<TrackServiceData>;
+//  public artistsData$: Observable<ArtistServiceData>;
 
  // @Input()
  // public set headers(mid: '62ded9a846e6d74f4d560805') {
@@ -27,17 +27,22 @@ export class IndiansummeradminComponent implements OnInit {
 //      this.utilsService.getMusicReleaseId(this._musicid);
 //  }
 
-  constructor(private utilsService: UtilsService, private readonly adminListener: AdminListener) {
-    this.setupAdminListeners();
-  }
+//  constructor(private utilsService: UtilsService, private readonly adminListener: AdminListener) {
+//    this.setupAdminListeners();
+//  }
 
-  public setupAdminListeners(){
+  constructor() {
 
-    this.headerData$ = this.utilsService.trackData$;
+    }
 
-    this.artistsData$ = this.adminListener.listen(AdminType.ARTIST_LIST) as Observable<ArtistServiceData>;
 
-  }
+  //public setupAdminListeners(){
+
+   // this.headerData$ = this.utilsService.trackData$;
+
+    //this.artistsData$ = this.adminListener.listen(AdminType.ARTIST_LIST) as Observable<ArtistServiceData>;
+
+ // }
 
   ngOnInit() {
   }
