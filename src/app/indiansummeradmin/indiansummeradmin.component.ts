@@ -61,6 +61,8 @@ export class IndiansummeradminComponent implements OnInit {
  // }
 
   ngOnInit() {
+
+      this.artistService.getArtistsByDisplay();
   }
 
 }
