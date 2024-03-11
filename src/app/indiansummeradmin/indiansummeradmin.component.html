@@ -10,17 +10,33 @@
   </mat-card-content>
 </mat-card>
 
+<ng-container [ngSwitch]="displayArtistsOptionsState$ | async">
 
+  <ng-container *ngSwitchCase="'in_progress'">
 
-<ng-container>
+    <ng-container *ngTemplateOutlet="isloading"></ng-container>
 
-  <ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'success'">
 
-    <artistscontainer></artistscontainer>
+    <ng-container *ngTemplateOutlet="enabled"></ng-container>
 
   </ng-container>
 
 </ng-container>
+
+
+<ng-template #isloading>
+
+  <mat-spinner color="primary"></mat-spinner>
+
+</ng-template>
+
+<ng-template #enabled>
+
+    <artistscontainer></artistscontainer>
+
+</ng-template>
 
 
 

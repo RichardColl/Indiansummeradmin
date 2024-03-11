@@ -4,8 +4,15 @@ import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolb
 import { TrackServiceData } from '../shared/utils.abstract.service';
 import { Observable , BehaviorSubject} from 'rxjs';
 import { UtilsService } from '../shared/utils/utils.service';
+import { ArtistService } from '../shared/artist/artist.service';
 import { AdminListener, AdminType } from '../shared/utils/listener.service';
 import { ArtistServiceData } from '../shared/artist.abstract.service';
+
+import { map } from 'rxjs/operators';
+import { ServiceState } from '../shared/main-api.service';
+import { ArtistData } from '../shared/artist.abstract.service';
+
+
 
 
 @Component({
@@ -31,10 +38,19 @@ export class IndiansummeradminComponent implements OnInit {
 //    this.setupAdminListeners();
 //  }
 
-  constructor() {
+  ServiceStateEnum = ServiceState;
+
+  constructor(private artistService: ArtistService) {
 
     }
 
+  displayArtistsOptionsState$:Observable<ServiceState>
+            = this.artistService.serviceData$.pipe(
+              map(({ artistServiceState, artistDetails }) => {
+
+              return artistServiceState;
+              })
+            );
 
   //public setupAdminListeners(){
 
