@@ -44,7 +44,7 @@ export class IndiansummeradminComponent implements OnInit {
 
     }
 
-  displayArtistsOptionsState$:Observable<ServiceState>
+  viewState$:Observable<ServiceState>
             = this.artistService.serviceData$.pipe(
               map(({ artistServiceState, artistDetails }) => {
 

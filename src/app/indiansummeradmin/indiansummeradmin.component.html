@@ -10,7 +10,7 @@
   </mat-card-content>
 </mat-card>
 
-<ng-container [ngSwitch]="displayArtistsOptionsState$ | async">
+<ng-container [ngSwitch]="viewState$ | async">
 
   <ng-container *ngSwitchCase="'in_progress'">
 
@@ -22,6 +22,19 @@
     <ng-container *ngTemplateOutlet="enabled"></ng-container>
 
   </ng-container>
+
+  <ng-container *ngSwitchCase="'error'">
+
+    <ng-container *ngTemplateOutlet="haserror"></ng-container>
+
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+
+    <ng-container *ngTemplateOutlet="haserror"></ng-container>
+
+  </ng-container>
+
 
 </ng-container>
 
@@ -35,6 +48,12 @@
 <ng-template #enabled>
 
     <artistscontainer></artistscontainer>
+
+</ng-template>
+
+<ng-template #haserror>
+
+  <div>Error Loading *******************************</div>
 
 </ng-template>
 
