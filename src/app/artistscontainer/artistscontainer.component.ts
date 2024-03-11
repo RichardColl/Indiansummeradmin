@@ -32,8 +32,10 @@ export class ArtistscontainerComponent implements OnInit {
             if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
               this.thedata = artistDetails;
               this.collection.data = this.thedata._embedded.artists;
-              for (let i = 0; i < 3; i++) {
-                     this.result.push(this.collection.data[i]);
+              for (let i = 0; i < 1; i++) {
+
+                     this.result.push(this.collection.data[this.randomInteger(10, 50)]);
+
                }
 
             }
@@ -50,4 +52,7 @@ export class ArtistscontainerComponent implements OnInit {
 
   }
 
+  randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }
