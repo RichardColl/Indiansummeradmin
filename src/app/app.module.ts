@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginService } from './shared/login/login.service';
 import { MusicreleaseService } from './shared/musicrelease/musicrelease.service';
 import { ArtistService } from './shared/artist/artist.service';
+import { AdminDispatcher, AdminListener, ListenerService } from './shared/utils/listener.service';
 
 import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmin.component';
 import { DisplayeditartistlistComponent } from './displayeditartistlist/displayeditartistlist.component';
@@ -61,7 +62,15 @@ import { SummarycontainerComponent } from './summarycontainer/summarycontainer.c
         ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [LoginService, MusicreleaseService, ArtistService],
+  providers: [LoginService, MusicreleaseService, ArtistService,
+
+  { provide: AdminDispatcher,
+    useClass: ListenerService
+   },
+  { provide: AdminListener,
+      useClass: ListenerService
+   }
+  ],
   exports: [ArtistscontainerComponent, MusicreleasescontainerComponent],
   schemas: [
 
