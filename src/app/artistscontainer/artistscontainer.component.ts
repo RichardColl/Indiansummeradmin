@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { ServiceState } from '../shared/main-api.service';
 import { ArtistData } from '../shared/artist.abstract.service';
-import { ArtistServiceData } from '../shared/artist.abstract.service';
+
 
 @Component({
   selector: 'artistscontainer',
@@ -23,7 +23,12 @@ export class ArtistscontainerComponent implements OnInit {
 
       ServiceStateEnum = ServiceState;
 
-  constructor(private artistService: ArtistService) { }
+
+
+  constructor(private artistService: ArtistService) {
+
+
+  }
 
   displayArtistsOptionsState$:Observable<ServiceState>
           = this.artistService.serviceData$.pipe(
@@ -41,6 +46,7 @@ export class ArtistscontainerComponent implements OnInit {
           );
 
         artistDetails: ArtistData;
+
 
   ngOnInit() {
 

@@ -26,6 +26,7 @@ import { ArtistconnectionsComponent } from './artistconnections/artistconnection
 import { ArtistlistsummaryComponent } from './artistlistsummary/artistlistsummary.component';
 import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.component';
 import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicreleasescontainer.component';
+import { SummarycontainerComponent } from './summarycontainer/summarycontainer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicr
     ArtistconnectionsComponent,
     ArtistlistsummaryComponent,
     ArtistscontainerComponent,
-    MusicreleasescontainerComponent
+    MusicreleasescontainerComponent,
+    SummarycontainerComponent
   ],
   imports: [
     BrowserModule,

@@ -3,9 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ArtistService } from '../shared/artist/artist.service';
+import { AdminDispatcher, AdminType } from '../shared/utils/listener.service';
 
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { ServiceState } from '../shared/main-api.service';
 import { ArtistData } from '../shared/artist.abstract.service';
 import { ArtistServiceData } from '../shared/artist.abstract.service';
@@ -30,34 +31,52 @@ export class DisplayeditartistlistComponent implements OnInit {
 
   ServiceStateEnum = ServiceState;
 
-  constructor(private artistService: ArtistService) { }
+  constructor(private artistService: ArtistService, private readonly adminDispatcher: AdminDispatcher) { }
+
 
   displayArtistsOptionsState$:Observable<ServiceState>
-        = this.artistService.serviceData$.pipe(
-          map(({ artistServiceState, artistDetails }) => {
-          //alert("in the map");
-          if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
-          //alert("musicReleaseDetails successzzzz");
-          //  this.thedata = artistDetails;
-            //this.collection.data = data._embedded.artists;
-            //this.thedata = artistDetails.theartists;
-            this.thedata = artistDetails;
-            this.collection.data = this.thedata._embedded.artists;
+          = this.artistService.serviceData$.pipe(
+            map(({ artistServiceState, artistDetails }) => {
+            //alert("in the map");
+            if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
+            //alert("musicReleaseDetails successzzzz");
+            //  this.thedata = artistDetails;
+              //this.collection.data = data._embedded.artists;
+              //this.thedata = artistDetails.theartists;
+              this.thedata = artistDetails;
+              this.collection.data = this.thedata._embedded.artists;
 
-            //  const { id, title } = musicReleaseDetails;
-             // alert(id);
-             // alert(title);
-             var i = 0;
-             // alert(musicReleaseDetails);
-           //console.log("the array " + musicReleaseDetails.toString());
-          // alert(musicReleaseDetails._embedded.musicReleases[0].artistid);
-          }
+              //  const { id, title } = musicReleaseDetails;
+               // alert(id);
+               // alert(title);
+               var i = 0;
+               // alert(musicReleaseDetails);
+             //console.log("the array " + musicReleaseDetails.toString());
+            // alert(musicReleaseDetails._embedded.musicReleases[0].artistid);
+            }
 
-          return artistServiceState;
-          })
-        );
+            return artistServiceState;
+            })
+          );
 
       artistDetails: ArtistData;
+
+
+
+    readonly viewData$ = this.artistService.serviceData$.pipe(
+
+          map(response => {
+
+
+          } ),
+           tap(model => {
+
+                         this.adminDispatcher.dispatch(
+                             AdminType.ARTIST_LIST,
+                             model as ArtistServiceData
+                         );
+            })
+         ) as Observable<ArtistServiceData>;
 
   pageChanged(event){
           this.config.currentPage = event;

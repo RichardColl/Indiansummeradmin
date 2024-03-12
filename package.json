@@ -27,6 +27,7 @@
     "@angular/router": "~8.2.7",
     "express": "^4.16.4",
     "ngx-pagination": "^6.0.1",
+    "ramda": "^0.29.1",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.5.2",
     "rxjs-observable": "0.0.7",

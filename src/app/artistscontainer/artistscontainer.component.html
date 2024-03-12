@@ -2,6 +2,11 @@
 
   <mat-card-content>
 
+    <mat-card-header>
+      <mat-card-title><h2 id="header">Artists List</h2></mat-card-title>
+    </mat-card-header>
+
+
     <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
       <mat-spinner color="primary"></mat-spinner>
     </div>

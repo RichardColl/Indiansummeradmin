@@ -52,13 +52,6 @@ export class IndiansummeradminComponent implements OnInit {
               })
             );
 
-  //public setupAdminListeners(){
-
-   // this.headerData$ = this.utilsService.trackData$;
-
-    //this.artistsData$ = this.adminListener.listen(AdminType.ARTIST_LIST) as Observable<ArtistServiceData>;
-
- // }
 
   ngOnInit() {
 
