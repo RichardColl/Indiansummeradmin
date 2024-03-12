@@ -1,1 +1,15 @@
-<p>artistlistsummary works!</p>
+
+<ng-container ngIf="viewState$ | async">
+  <ng-container [ngSwitch]="viewState$ | async">
+
+  <ng-container *ngSwitchCase="ServiceState.SUCCESS">
+    <ng-container *ngTemplateOutlet="isloaded"> </ng-container>
+  </ng-container>
+  </ng-container>
+</ng-container>
+
+
+<ng-template #isloaded>
+
+    Number of Artists is
+</ng-template>

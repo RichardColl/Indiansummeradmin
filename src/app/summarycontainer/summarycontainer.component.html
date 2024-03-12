@@ -1,5 +1,5 @@
 <ng-container *ngIf="artistsData$ | async">
 
-  <app-artistlistsummary></app-artistlistsummary>
+  <app-artistlistsummary [data$]="artistsData$"></app-artistlistsummary>
 
 </ng-container>
