@@ -31,7 +31,7 @@ export class DisplayeditartistlistComponent implements OnInit {
 
   ServiceStateEnum = ServiceState;
 
-  constructor(private artistService: ArtistService, private readonly adminDispatcher: AdminDispatcher) { }
+  constructor(private artistService: ArtistService) { }
 
 
   displayArtistsOptionsState$:Observable<ServiceState>
@@ -63,20 +63,6 @@ export class DisplayeditartistlistComponent implements OnInit {
 
 
 
-    readonly viewData$ = this.artistService.serviceData$.pipe(
-
-          map(response => {
-
-
-          } ),
-           tap(model => {
-
-                         this.adminDispatcher.dispatch(
-                             AdminType.ARTIST_LIST,
-                             model as ArtistServiceData
-                         );
-            })
-         ) as Observable<ArtistServiceData>;
 
   pageChanged(event){
           this.config.currentPage = event;

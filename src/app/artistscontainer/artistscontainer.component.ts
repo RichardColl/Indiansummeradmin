@@ -3,11 +3,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ArtistService } from '../shared/artist/artist.service';
-
+import { AdminDispatcher, AdminType } from '../shared/utils/listener.service';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { ServiceState } from '../shared/main-api.service';
 import { ArtistData } from '../shared/artist.abstract.service';
+
+
+
+import { ArtistServiceData } from '../shared/artist.abstract.service';
+
 
 
 @Component({
@@ -25,7 +30,7 @@ export class ArtistscontainerComponent implements OnInit {
 
 
 
-  constructor(private artistService: ArtistService) {
+  constructor(private artistService: ArtistService,  private readonly adminDispatcher: AdminDispatcher) {
 
 
   }
@@ -46,6 +51,21 @@ export class ArtistscontainerComponent implements OnInit {
           );
 
         artistDetails: ArtistData;
+
+      readonly viewData$ = this.artistService.serviceData$.pipe(
+
+            map(response => {
+
+
+            } ),
+             tap(model => {
+
+                           this.adminDispatcher.dispatch(
+                               AdminType.ARTIST_LIST,
+                               model as ArtistServiceData
+                           );
+              })
+           ) as Observable<ArtistServiceData>;
 
 
   ngOnInit() {
