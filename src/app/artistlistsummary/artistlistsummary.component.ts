@@ -19,7 +19,15 @@ export class ArtistlistsummaryComponent implements OnInit {
   public readonly ServiceState = ServiceState;
 
   public viewState$: Observable<ServiceState>;
-
+//by the time i get to access in html
+//with
+//ngIf="viewState$ | async"
+//i get a null injector error , i suspect the just isn't initialised with the artist list
+//maybe the listener dispatch hasn't worked correctly  and initialised
+//code all there will fix later
+// the code in artistcontainer which should initialised the observable
+//tap(model => {
+//may not be working correctly ???
 
   constructor() {
 
