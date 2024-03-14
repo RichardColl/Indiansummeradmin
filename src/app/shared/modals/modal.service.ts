@@ -21,18 +21,21 @@ export interface ISModalModel<T= any> {
 }
 
 export abstract class AbstractModalService{
+      abstract listen$: Observable<ISModalModel>;
       abstract openModalComponent(data: ISModalModel):void;
 }
 
 @Injectable()
-export class ModalService {
+export class ModalService implements AbstractModalService {
 
       private modalServiceSubject: Subject<ISModalModel> = new Subject();
 
+      public listen$ = this.modalServiceSubject.asObservable();
+
       public openModalComponent(data: ISModalModel) {
-
-          alert('openokkk');
-
+//alert('openokkk');
           this.modalServiceSubject.next(data);
+
+          alert('openokkkzzzzzzzzzz');
       }
 }
