@@ -15,7 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginService } from './shared/login/login.service';
 import { MusicreleaseService } from './shared/musicrelease/musicrelease.service';
 import { ArtistService } from './shared/artist/artist.service';
+import { AbstractModalService, ModalService } from './shared/modals/modal.service';
 import { AdminDispatcher, AdminListener, ListenerService } from './shared/utils/listener.service';
+
 
 import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmin.component';
 import { DisplayeditartistlistComponent } from './displayeditartistlist/displayeditartistlist.component';
@@ -28,6 +30,8 @@ import { ArtistlistsummaryComponent } from './artistlistsummary/artistlistsummar
 import { ArtistscontainerComponent } from './artistscontainer/artistscontainer.component';
 import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicreleasescontainer.component';
 import { SummarycontainerComponent } from './summarycontainer/summarycontainer.component';
+import { MusicreleasecontainerComponent } from './musicreleasecontainer/musicreleasecontainer.component';
+import { CreatemusicreleaseComponent } from './createmusicrelease/createmusicrelease.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { SummarycontainerComponent } from './summarycontainer/summarycontainer.c
     ArtistlistsummaryComponent,
     ArtistscontainerComponent,
     MusicreleasescontainerComponent,
-    SummarycontainerComponent
+    SummarycontainerComponent,
+    MusicreleasecontainerComponent,
+    CreatemusicreleaseComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +75,10 @@ import { SummarycontainerComponent } from './summarycontainer/summarycontainer.c
    },
   { provide: AdminListener,
       useClass: ListenerService
-   }
+   },
+      { provide: AbstractModalService,
+          useClass: ModalService
+       }
   ],
   exports: [ArtistscontainerComponent, MusicreleasescontainerComponent],
   schemas: [

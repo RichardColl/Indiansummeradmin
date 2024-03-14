@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
+import { CreatemusicreleaseComponent } from '../createmusicrelease/createmusicrelease.component';
+import { ISModalComponent, ModalService, AbstractModalService } from '../shared/modals/modal.service';
+import { MusicReleaseInputData } from '../models/musicrelease.model';
 
 @Component({
   selector: 'musicreleasescontainer',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MusicreleasescontainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalOutletService: AbstractModalService) { }
 
   ngOnInit() {
   }
 
+  handleCreateMusicRelease() {
+      alert('createe');
+
+      let componentType : Type<ISModalComponent> = CreatemusicreleaseComponent;
+
+      const inputData: MusicReleaseInputData = {
+
+            supportMessage: 'Music Release Area',
+            hostID: 'Indiansummer'
+
+      };
+
+      this.modalOutletService.openModalComponent();
+
+
+  }
 }

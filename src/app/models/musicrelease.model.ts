@@ -4,3 +4,9 @@ export class MusicRelease {
 
 
 }
+
+
+export type MusicReleaseInputData = Readonly<{
+    supportMessage?: string;
+    hostID: string;
+}>;

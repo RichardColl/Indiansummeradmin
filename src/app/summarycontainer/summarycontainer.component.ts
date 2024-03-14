@@ -30,7 +30,9 @@ export class SummarycontainerComponent implements OnInit {
    public setupAdminListeners(){
 
         this.artistsData$ = this.adminListener.listen(AdminType.ARTIST_LIST) as Observable<ArtistServiceData>;
-
+        this.artistsData$.subscribe({
+            next: (value) => console.log("The value is:************************ ", value)
+        });
     }
 
 }
