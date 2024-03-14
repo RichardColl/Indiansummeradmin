@@ -1,6 +1,6 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { CreatemusicreleaseComponent } from '../createmusicrelease/createmusicrelease.component';
-import { ISModalComponent, ModalService, AbstractModalService } from '../shared/modals/modal.service';
+import { ISModalComponent, ModalService, AbstractModalService, ISModalModel } from '../shared/modals/modal.service';
 import { MusicReleaseInputData } from '../models/musicrelease.model';
 
 @Component({
@@ -27,7 +27,10 @@ export class MusicreleasescontainerComponent implements OnInit {
 
       };
 
-      this.modalOutletService.openModalComponent();
+      this.modalOutletService.openModalComponent( {
+            componentType,
+            inputData } as ISModalModel);
+
 
 
   }

@@ -1,4 +1,5 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Type } from '@angular/core';
+import { Observable , Subject} from 'rxjs';
 
 
 export interface ISModalComponent<T = any> {
@@ -12,15 +13,26 @@ export interface ISModalComponent<T = any> {
 
 }
 
+export interface ISModalModel<T= any> {
+
+    componentType: Type<ISModalComponent<T>>;
+    inputData: T;
+
+}
+
 export abstract class AbstractModalService{
-      abstract openModalComponent():void;
+      abstract openModalComponent(data: ISModalModel):void;
 }
 
 @Injectable()
 export class ModalService {
 
-      public openModalComponent() {
+      private modalServiceSubject: Subject<ISModalModel> = new Subject();
+
+      public openModalComponent(data: ISModalModel) {
 
           alert('openokkk');
+
+          this.modalServiceSubject.next(data);
       }
 }
