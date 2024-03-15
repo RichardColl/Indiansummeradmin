@@ -55,11 +55,11 @@ export class CreatemusicreleaseComponent implements OnInit {
   }
 
 
-  register(musicrelease: MusicRelease): void{
+  onSubmit(){
 
 
         alert('saving');
-        alert(musicrelease.title);
+        alert(this.musicReleaseForm.value.title);
 
       }
 
