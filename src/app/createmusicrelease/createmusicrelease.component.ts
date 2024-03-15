@@ -26,12 +26,14 @@ export class CreatemusicreleaseComponent implements OnInit {
               {
                 validators: [
                   Validators.required,
-                  Validators.maxLength(5)
+                  Validators.maxLength(100)
                 ]
               }
-          ]
+          ],
+          releaseaddeddate: [new Date()]
 
-      }
+
+        }
 
       )
 

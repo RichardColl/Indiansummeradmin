@@ -14,7 +14,74 @@
                        [ngClass]=" {'input-text--error': isFieldInvalid('title')}"
                        name="ngModel" required name="title" class="form-control" placeholder="Title"></div>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="musicReleaseForm.invalid">Submit</button>
+        <div><input  formControlName="artistname"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('artistname')}"
+                   name="ngModel" required name="artistname" class="form-control" placeholder="artistname"></div>
+
+      <div><input  formControlName="shortdescription"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('shortdescription')}"
+                   name="ngModel" required name="shortdescription" class="form-control" placeholder="shortdescription"></div>
+
+      <div><input  formControlName="type"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('type')}"
+                   name="ngModel" required name="type" value="VINYL" class="form-control" placeholder="type"></div>
+
+      <div><input  formControlName="frontcoverimage"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('frontcoverimage')}"
+                   name="ngModel" required name="frontcoverimage"  class="form-control" placeholder="frontcoverimage"></div>
+
+      <div><input  formControlName="display"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('display')}"
+                   name="ngModel" required name="display"  value="true" class="form-control" placeholder="display"></div>
+
+      <div><input  formControlName="genres"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('genres')}"
+                   name="ngModel" required name="genres"  value="INDIE" class="form-control" placeholder="genres"></div>
+
+      <div><input  formControlName="releasedate"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('releasedate')}"
+                   name="ngModel" required name="releasedate"  value="2023-06-27" class="form-control" placeholder="releasedate"></div>
+
+      <div><input  formControlName="releaseaddeddate"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('releaseaddeddate')}"
+                   name="ngModel" required name="releaseaddeddate"   class="form-control" placeholder="releaseaddeddate"></div>
+
+      <div><input  formControlName="vinylformat"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('vinylformat')}"
+                   name="ngModel" required name="vinylformat"  value="1 x LP black vinyl" class="form-control" placeholder="vinylformat"></div>
+
+      <div><input  formControlName="label"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('label')}"
+                   name="ngModel" required name="label"   class="form-control" placeholder="label"></div>
+
+      <div><input  formControlName="catalogueno"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('catalogueno')}"
+                   name="ngModel" required name="catalogueno"   class="form-control" placeholder="catalogueno"></div>
+
+      <div><input  formControlName="barcode"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('barcode')}"
+                   name="ngModel" required name="barcode"   class="form-control" placeholder="barcode"></div>
+
+      <div><input  formControlName="price"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('price')}"
+                   name="ngModel" required name="price"   class="form-control" placeholder="price"></div>
+
+      <div><input  formControlName="instock"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('instock')}"
+                   name="ngModel" required name="instock"   class="form-control" placeholder="instock"></div>
+
+      <div><input  formControlName="releaseyear"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('releaseyear')}"
+                   name="ngModel" required name="releaseyear"   class="form-control" placeholder="releaseyear"></div>
+
+
+
+
+
+
+
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="musicReleaseForm.invalid">Submit</button>
 
 
     </form>
