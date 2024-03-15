@@ -17,7 +17,10 @@ export class MusicreleasescontainerComponent implements OnInit {
 
   handleCreateMusicRelease() {
       alert('createe');
-
+      // this code needs to work with extra modal component code containing a template
+      //which will be positioned ina  fixed area on page and will be plugged with the CreatemusicreleaseComponent
+      //when dialog loaded , uses the listen$ observable
+      //too much code involved to finish
       let componentType : Type<ISModalComponent> = CreatemusicreleaseComponent;
 
       const inputData: MusicReleaseInputData = {

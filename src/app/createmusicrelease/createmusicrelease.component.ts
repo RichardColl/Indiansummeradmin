@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { MusicReleaseInputData } from '../models/musicrelease.model';
+import { FormBuilder, Validators, FormGroup} from '@angular/forms';
+import { MusicRelease } from '../models/musicrelease.model';
 
 @Component({
   selector: 'app-createmusicrelease',
@@ -14,9 +16,51 @@ export class CreatemusicreleaseComponent implements OnInit {
   @Output()
   closeEvent = new EventEmitter<any>();
 
-  constructor() { }
+  musicReleaseForm: FormGroup;
+
+  constructor(private formBuilder : FormBuilder) {
+      this.musicReleaseForm = this.formBuilder.group( {
+
+          title: [
+              null,
+              {
+                validators: [
+                  Validators.required,
+                  Validators.maxLength(5)
+                ]
+              }
+          ]
+
+      }
+
+      )
+
+   }
 
   ngOnInit() {
   }
+
+  isFieldInvalid(field: string) {
+
+      return(
+          this.musicReleaseForm.get(field).invalid
+      );
+
+  }
+
+
+  get title() {
+
+      return this.musicReleaseForm.get('title');
+  }
+
+
+  register(musicrelease: MusicRelease): void{
+
+
+        alert('saving');
+        alert(musicrelease.title);
+
+      }
 
 }
