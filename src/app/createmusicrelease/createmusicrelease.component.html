@@ -14,68 +14,92 @@
                        [ngClass]=" {'input-text--error': isFieldInvalid('title')}"
                        name="ngModel" required name="title" class="form-control" placeholder="Title"></div>
 
+        <div>artistname</div>
         <div><input  formControlName="artistname"
                    [ngClass]=" {'input-text--error': isFieldInvalid('artistname')}"
                    name="ngModel" required name="artistname" class="form-control" placeholder="artistname"></div>
 
+      <div>shortdescription</div>
       <div><input  formControlName="shortdescription"
                    [ngClass]=" {'input-text--error': isFieldInvalid('shortdescription')}"
                    name="ngModel" required name="shortdescription" class="form-control" placeholder="shortdescription"></div>
 
+      <div>type</div>
       <div><input  formControlName="type"
                    [ngClass]=" {'input-text--error': isFieldInvalid('type')}"
-                   name="ngModel" required name="type" value="VINYL" class="form-control" placeholder="type"></div>
+                   name="ngModel" required name="type" readonly value="VINYL" class="form-control" placeholder="type"></div>
 
+      <div>frontcoverimage</div>
       <div><input  formControlName="frontcoverimage"
                    [ngClass]=" {'input-text--error': isFieldInvalid('frontcoverimage')}"
                    name="ngModel" required name="frontcoverimage"  class="form-control" placeholder="frontcoverimage"></div>
 
+      <div>display</div>
       <div><input  formControlName="display"
                    [ngClass]=" {'input-text--error': isFieldInvalid('display')}"
-                   name="ngModel" required name="display"  value="true" class="form-control" placeholder="display"></div>
+                   name="ngModel" required name="display"  readonly value="true" class="form-control" placeholder="display"></div>
 
+      <div>genres</div>
       <div><input  formControlName="genres"
                    [ngClass]=" {'input-text--error': isFieldInvalid('genres')}"
-                   name="ngModel" required name="genres"  value="INDIE" class="form-control" placeholder="genres"></div>
+                   name="ngModel" required name="genres"  readonly value="INDIE" class="form-control" placeholder="genres"></div>
 
+      <div>releasedate</div>
       <div><input  formControlName="releasedate"
                    [ngClass]=" {'input-text--error': isFieldInvalid('releasedate')}"
                    name="ngModel" required name="releasedate"  value="2023-06-27" class="form-control" placeholder="releasedate"></div>
 
+      <div>Add todays date</div>
       <div><input  formControlName="releaseaddeddate"
                    [ngClass]=" {'input-text--error': isFieldInvalid('releaseaddeddate')}"
-                   name="ngModel" required name="releaseaddeddate"   class="form-control" placeholder="releaseaddeddate"></div>
+                   name="ngModel" required name="releaseaddeddate"  type="date" class="form-control"  placeholder="releaseaddeddate"></div>
 
+      <div>vinylformat</div>
       <div><input  formControlName="vinylformat"
                    [ngClass]=" {'input-text--error': isFieldInvalid('vinylformat')}"
                    name="ngModel" required name="vinylformat"  value="1 x LP black vinyl" class="form-control" placeholder="vinylformat"></div>
 
+      <div>record label</div>
       <div><input  formControlName="label"
                    [ngClass]=" {'input-text--error': isFieldInvalid('label')}"
                    name="ngModel" required name="label"   class="form-control" placeholder="label"></div>
 
+      <div>catalogueno</div>
       <div><input  formControlName="catalogueno"
                    [ngClass]=" {'input-text--error': isFieldInvalid('catalogueno')}"
                    name="ngModel" required name="catalogueno"   class="form-control" placeholder="catalogueno"></div>
 
+      <div>barcode</div>
       <div><input  formControlName="barcode"
                    [ngClass]=" {'input-text--error': isFieldInvalid('barcode')}"
                    name="ngModel" required name="barcode"   class="form-control" placeholder="barcode"></div>
 
+      <div>price</div>
       <div><input  formControlName="price"
                    [ngClass]=" {'input-text--error': isFieldInvalid('price')}"
                    name="ngModel" required name="price"   class="form-control" placeholder="price"></div>
 
+      <div>instock</div>
       <div><input  formControlName="instock"
                    [ngClass]=" {'input-text--error': isFieldInvalid('instock')}"
                    name="ngModel" required name="instock"   class="form-control" placeholder="instock"></div>
 
+      <div>Release yr ie 2024</div>
       <div><input  formControlName="releaseyear"
                    [ngClass]=" {'input-text--error': isFieldInvalid('releaseyear')}"
                    name="ngModel" required name="releaseyear"   class="form-control" placeholder="releaseyear"></div>
 
+      <div>Add Tracks</div>
+      <div formArrayName="items"
+           *ngFor="let item of musicReleaseForm.controls['items'].controls; let i = index">
+        <div [formGroupName]="i">
+          <input formControlName='track'>
+          <input formControlName='length'>
 
+        </div>
+      </div>
 
+      <button type="button" (click)="addNext()">Add Next</button>
 
 
 
