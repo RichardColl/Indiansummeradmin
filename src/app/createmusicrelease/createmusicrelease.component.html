@@ -12,7 +12,7 @@
 
           <div><input  [(ngModel)]="musicrelease.title"
                        formControlName="title"
-                       [ngClass]=" {'input-text--error': isFieldInvalid('title')"
+                       [ngClass]=" {'input-text--error': isFieldInvalid('title')}"
                        name="ngModel" required name="title" class="form-control" placeholder="Title"></div>
 
         <button mat-raised-button color="primary" type="submit" [disabled]="musicReleaseForm.invalid">Submit</button>
