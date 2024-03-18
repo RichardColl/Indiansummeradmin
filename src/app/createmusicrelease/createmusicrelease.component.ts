@@ -77,8 +77,8 @@ export class CreatemusicreleaseComponent implements OnInit {
 
 
   onSubmit(): void {
-        alert("onSubmitollll");
-        alert(this.musicReleaseForm.value.title);
+        //alert("onSubmitollll");
+        alert(this.musicReleaseForm.value.artistname);
         this.musicrelease.title = this.musicReleaseForm.value.title;
         this.musicrelease.artistid = this.musicReleaseForm.value.artistid;
         this.musicrelease.artistname = this.musicReleaseForm.value.artistname;
