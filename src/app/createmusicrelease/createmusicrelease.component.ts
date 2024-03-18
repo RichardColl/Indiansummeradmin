@@ -19,6 +19,7 @@ export class CreatemusicreleaseComponent implements OnInit {
 
   musicReleaseForm: FormGroup;
   result:string;
+  musicrelease = new MusicRelease();
 
   constructor(private formBuilder : FormBuilder, private musicreleaseServ: MusicreleaseService) {
       this.musicReleaseForm = this.formBuilder.group( {
@@ -43,9 +44,9 @@ export class CreatemusicreleaseComponent implements OnInit {
 
   ngOnInit() {
 
-       this.musicReleaseForm = this.formBuilder.group({
-            items: this.formBuilder.array([this.createItem()])
-          })
+       //this.musicReleaseForm = this.formBuilder.group({
+        //    items: this.formBuilder.array([this.createItem()])
+        //  })
   }
 
 
@@ -75,27 +76,28 @@ export class CreatemusicreleaseComponent implements OnInit {
   }
 
 
-  onSubmit(musicrelease : MusicRelease): void {
+  onSubmit(): void {
+        alert("onSubmitollll");
+        alert(this.musicReleaseForm.value.title);
+        this.musicrelease.title = this.musicReleaseForm.value.title;
+        this.musicrelease.artistid = this.musicReleaseForm.value.artistid;
+        this.musicrelease.artistname = this.musicReleaseForm.value.artistname;
+        this.musicrelease.shortdescription = this.musicReleaseForm.value.shortdescription;
+        this.musicrelease.type = this.musicReleaseForm.value.type;
+        this.musicrelease.frontcoverimage = this.musicReleaseForm.value.frontcoverimage;
+        this.musicrelease.display = this.musicReleaseForm.value.display;
+        this.musicrelease.genres = this.musicReleaseForm.value.genres;
+        this.musicrelease.releasedate = this.musicReleaseForm.value.releasedate;
+        this.musicrelease.releaseaddeddate = this.musicReleaseForm.value.releaseaddeddate;
+        this.musicrelease.vinylformat = this.musicReleaseForm.value.vinylformat;
+        this.musicrelease.label = this.musicReleaseForm.value.label;
+        this.musicrelease.catalogueno = this.musicReleaseForm.value.catalogueno;
+        this.musicrelease.barcode = this.musicReleaseForm.value.barcode;
+        this.musicrelease.price = this.musicReleaseForm.value.price;
+        this.musicrelease.instock = this.musicReleaseForm.value.instock;
+        this.musicrelease.releaseyear = this.musicReleaseForm.value.releaseyear;
 
-        musicrelease.title = this.musicReleaseForm.value.title;
-        musicrelease.artistid = this.musicReleaseForm.value.artistid;
-        musicrelease.artistname = this.musicReleaseForm.value.artistname;
-        musicrelease.shortdescription = this.musicReleaseForm.value.shortdescription;
-        musicrelease.type = this.musicReleaseForm.value.type;
-        musicrelease.frontcoverimage = this.musicReleaseForm.value.frontcoverimage;
-        musicrelease.display = this.musicReleaseForm.value.display;
-        musicrelease.genres = this.musicReleaseForm.value.genres;
-        musicrelease.releasedate = this.musicReleaseForm.value.releasedate;
-        musicrelease.releaseaddeddate = this.musicReleaseForm.value.releaseaddeddate;
-        musicrelease.vinylformat = this.musicReleaseForm.value.vinylformat;
-        musicrelease.label = this.musicReleaseForm.value.label;
-        musicrelease.catalogueno = this.musicReleaseForm.value.catalogueno;
-        musicrelease.barcode = this.musicReleaseForm.value.barcode;
-        musicrelease.price = this.musicReleaseForm.value.price;
-        musicrelease.instock = this.musicReleaseForm.value.instock;
-        musicrelease.releaseyear = this.musicReleaseForm.value.releaseyear;
-
-          this.musicreleaseServ.save(musicrelease)
+          this.musicreleaseServ.save(this.musicrelease)
                                  .subscribe(
                                      data => {
                                      if (data) {
