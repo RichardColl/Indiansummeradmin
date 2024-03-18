@@ -61,7 +61,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           type: [
-                                  null,
+                                  "VINYL",
                                   {
                                     validators: [
                                       Validators.required,
@@ -79,7 +79,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           display: [
-                                  null,
+                                  "true",
                                   {
                                     validators: [
                                       Validators.required
@@ -88,7 +88,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           genres: [
-                                  null,
+                                  "INDIE",
                                   {
                                     validators: [
                                       Validators.required,
