@@ -125,4 +125,18 @@ export class MusicreleaseService {
                           return this.http.get(this.TENDOITEM_API + '/'  + 'search/findAllByDisplayTrue', httpOptions);
         }
 
-}
+
+
+        save(musicrelease: any): Observable<any> {
+
+                     let result: Observable<Object>;
+                       //   alert("ins sup");
+                   //     alert(supplier);
+                         // if (car['href']) {
+                         //   result = this.http.put(car.href, car);
+                         // } else {
+                            result = this.http.post(this.TENDOITEM_API, musicrelease);
+                         // }
+                  return result;
+             }
+  }
