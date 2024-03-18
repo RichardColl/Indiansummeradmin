@@ -33,6 +33,142 @@ export class CreatemusicreleaseComponent implements OnInit {
                 ]
               }
           ],
+          artistid: [
+                        null,
+                        {
+                          validators: [
+                            Validators.required,
+                            Validators.maxLength(20)
+                          ]
+                        }
+                    ],
+          artistname: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(50)
+                                    ]
+                                  }
+                              ],
+          shortdescription: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(200)
+                                    ]
+                                  }
+                              ],
+          type: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          frontcoverimage: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          display: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required
+
+                                    ]
+                                  }
+                              ],
+          genres: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          releasedate: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          vinylformat: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          label: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(40)
+                                    ]
+                                  }
+                              ],
+          catalogueno: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          barcode: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          price: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(20)
+                                    ]
+                                  }
+                              ],
+          instock: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(10)
+                                    ]
+                                  }
+                              ],
+          releaseyear: [
+                                  null,
+                                  {
+                                    validators: [
+                                      Validators.required,
+                                      Validators.maxLength(5)
+                                    ]
+                                  }
+                              ],
+
           releaseaddeddate: [new Date()]
 
 
