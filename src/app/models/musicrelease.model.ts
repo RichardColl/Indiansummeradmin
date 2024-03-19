@@ -9,7 +9,7 @@ export class MusicRelease {
      type: string;
      frontcoverimage: string;
      display: boolean;
-     genres: string;
+     genres: string[]= [];
      releasedate: string;
      releaseaddeddate: string;
      vinylformat: string;

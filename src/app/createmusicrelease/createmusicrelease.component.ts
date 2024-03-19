@@ -20,6 +20,7 @@ export class CreatemusicreleaseComponent implements OnInit {
   musicReleaseForm: FormGroup;
   result:string;
   musicrelease = new MusicRelease();
+  genresarray: string[]= [];
 
   constructor(private formBuilder : FormBuilder, private musicreleaseServ: MusicreleaseService) {
       this.musicReleaseForm = this.formBuilder.group( {
@@ -88,14 +89,15 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           genres: [
-                                  "INDIE",
-                                  {
-                                    validators: [
-                                      Validators.required,
-                                      Validators.maxLength(20)
-                                    ]
-                                  }
-                              ],
+                                                    "INDIE",
+                                                    {
+                                                      validators: [
+                                                        Validators.required,
+                                                        Validators.maxLength(20)
+                                                      ]
+                                                    }
+                                                ],
+
           releasedate: [
                                   null,
                                   {
@@ -222,7 +224,10 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.musicrelease.type = this.musicReleaseForm.value.type;
         this.musicrelease.frontcoverimage = this.musicReleaseForm.value.frontcoverimage;
         this.musicrelease.display = this.musicReleaseForm.value.display;
-        this.musicrelease.genres = this.musicReleaseForm.value.genres;
+
+        this.genresarray.push(this.musicReleaseForm.value.genres);
+        this.musicrelease.genres = this.genresarray;
+
         this.musicrelease.releasedate = this.musicReleaseForm.value.releasedate;
         this.musicrelease.releaseaddeddate = this.musicReleaseForm.value.releaseaddeddate;
         this.musicrelease.vinylformat = this.musicReleaseForm.value.vinylformat;
