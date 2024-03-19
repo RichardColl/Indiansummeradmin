@@ -244,7 +244,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                      if (data) {
                                           this.result = "successful Create -- musicrelease ";
                                       }
-
+                                      window.location.reload();
                                      },
                                      error => {
                                         this.result = "create musicrelease  failed";

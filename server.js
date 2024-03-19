@@ -12,6 +12,13 @@ app.use(bodyParser.json());
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
+app.get('/*', function (req, res) {
+    res.sendFile(distDir);
+});
+
+
+
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
   res.header("Access-Control-Allow-Credentials", true);
