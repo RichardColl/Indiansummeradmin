@@ -32,7 +32,7 @@ export class CreateartistformComponent implements OnInit {
                              if (data) {
                                   this.result = "successful Create -- Artist ";
                               }
-                                 this.router.navigate(['createartistform']);
+                                 window.location.reload();
                              },
                              error => {
                                 this.result = "create artist  failed";
