@@ -228,6 +228,8 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.genresarray.push(this.musicReleaseForm.value.genres);
         this.musicrelease.genres = this.genresarray;
 
+        this.musicrelease.tracks.push('no tracks available for display');
+
         this.musicrelease.releasedate = this.musicReleaseForm.value.releasedate;
         this.musicrelease.releaseaddeddate = this.musicReleaseForm.value.releaseaddeddate;
         this.musicrelease.vinylformat = this.musicReleaseForm.value.vinylformat;
