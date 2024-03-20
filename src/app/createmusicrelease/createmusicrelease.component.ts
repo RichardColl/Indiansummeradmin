@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { MusicReleaseInputData } from '../models/musicrelease.model';
 import { FormBuilder, Validators, FormGroup, FormArray} from '@angular/forms';
-import { MusicRelease } from '../models/musicrelease.model';
+import { MusicRelease, Track } from '../models/musicrelease.model';
 import { MusicreleaseService } from '../shared/musicrelease/musicrelease.service';
 
 @Component({
@@ -20,7 +20,9 @@ export class CreatemusicreleaseComponent implements OnInit {
   musicReleaseForm: FormGroup;
   result:string;
   musicrelease = new MusicRelease();
+  tmptrack = new Track();
   genresarray: string[]= [];
+  trackarray: Track[]= [];
 
   constructor(private formBuilder : FormBuilder, private musicreleaseServ: MusicreleaseService) {
       this.musicReleaseForm = this.formBuilder.group( {
@@ -216,7 +218,7 @@ export class CreatemusicreleaseComponent implements OnInit {
 
   onSubmit(): void {
         //alert("onSubmitollll");
-        alert(this.musicReleaseForm.value.artistname);
+        //alert(this.musicReleaseForm.value.artistname);
         this.musicrelease.title = this.musicReleaseForm.value.title;
         this.musicrelease.artistid = this.musicReleaseForm.value.artistid;
         this.musicrelease.artistname = this.musicReleaseForm.value.artistname;
@@ -228,7 +230,11 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.genresarray.push(this.musicReleaseForm.value.genres);
         this.musicrelease.genres = this.genresarray;
 
-        this.musicrelease.tracks.push('no tracks available for display');
+        this.tmptrack.title = 'no tracks available for display';
+        this.tmptrack.trackno = '1';
+        this.tmptrack.length = '0:00';
+        this.trackarray.push(this.tmptrack);
+        this.musicrelease.tracks= this.trackarray;
 
         this.musicrelease.releasedate = this.musicReleaseForm.value.releasedate;
         this.musicrelease.releaseaddeddate = this.musicReleaseForm.value.releaseaddeddate;

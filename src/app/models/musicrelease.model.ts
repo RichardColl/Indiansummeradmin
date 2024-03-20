@@ -10,7 +10,7 @@ export class MusicRelease {
      frontcoverimage: string;
      display: boolean;
      genres: string[]= [];
-     tracks: string[]= [];
+     tracks: Track[]= [];
      releasedate: string;
      releaseaddeddate: string;
      vinylformat: string;
@@ -23,6 +23,15 @@ export class MusicRelease {
 
 }
 
+export class Track {
+
+    id: any;
+    title: String;
+
+    trackno: String;
+    length: String;
+
+}
 
 export type MusicReleaseInputData = Readonly<{
     supportMessage?: string;
