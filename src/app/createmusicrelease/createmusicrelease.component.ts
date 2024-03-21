@@ -227,8 +227,8 @@ export class CreatemusicreleaseComponent implements OnInit {
   }
 
    isRangeInvalid() {
-   alert('checkrangevalidator');
-        alert(this.musicReleaseForm.valid);
+   //alert('checkrangevalidator');
+     //   alert(this.musicReleaseForm.valid);
         return( //this syntax doesn't seem to work , maybe for ang 16
             //this.musicReleaseForm.errors?.['toGreaterThanFrom'] && true
             this.musicReleaseForm.valid
