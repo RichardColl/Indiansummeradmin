@@ -64,7 +64,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           type: [
-                                  "VINYL",
+                                  null,
                                   {
                                     validators: [
                                       Validators.required,
@@ -221,6 +221,7 @@ export class CreatemusicreleaseComponent implements OnInit {
 alert(this.musicReleaseForm.value.type);
       this.musicReleaseForm.value.type= 'VINYL';
       alert(this.musicReleaseForm.value.type);
+
 
 
   }
