@@ -217,8 +217,9 @@ export class CreatemusicreleaseComponent implements OnInit {
 
 
   addVinylType() {
-
+      alert(this.musicReleaseForm.value.type);
       this.musicReleaseForm.value.type= 'VINYL';
+      alert(this.musicReleaseForm.value.type);
 
   }
 
