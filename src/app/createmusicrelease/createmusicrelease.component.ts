@@ -216,6 +216,27 @@ export class CreatemusicreleaseComponent implements OnInit {
   }
 
 
+  addVinylType() {
+
+      this.musicReleaseForm.get('type').value= 'VINYL';
+
+  }
+
+  addCDType() {
+
+      this.musicReleaseForm.get('type').value= 'CD';
+
+     }
+
+
+     addCassetteType() {
+
+           this.musicReleaseForm.get('type').value= 'CASSETTE';
+
+     }
+
+
+
   onSubmit(): void {
         //alert("onSubmitollll");
         //alert(this.musicReleaseForm.value.artistname);
