@@ -14,7 +14,8 @@
                        [ngClass]=" {'input-text--error': isFieldInvalid('title')}"
                        name="ngModel" required name="title" class="form-control" placeholder="Title"></div>
 
-      <div><span class="errmsg" *ngIf="this.title.hasError('required')">
+      <div *ngIf="isFieldInvalid('title')">
+        <span class="errmsg" *ngIf="this.title.hasError('required')">
                   Title is a required field
 
       </span></div>
