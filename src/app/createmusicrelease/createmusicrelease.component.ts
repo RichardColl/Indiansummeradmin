@@ -64,7 +64,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           type: [
-                                  null,
+                                  "VINYL",
                                   {
                                     validators: [
                                       Validators.required,
@@ -217,27 +217,23 @@ export class CreatemusicreleaseComponent implements OnInit {
 
 
   addVinylType() {
-  alert('vinylllllllll');
-alert(this.musicReleaseForm.value.type);
-      this.musicReleaseForm.value.type= 'VINYL';
-      alert(this.musicReleaseForm.value.type);
-
+  //alert('vinylllllllll');
+//alert(this.musicReleaseForm.value.type);
+ //     this.musicReleaseForm.value.type= 'VINYL';
+ //     alert(this.musicReleaseForm.value.type);
+  //setting won't work , if needs will removecontrol/addcontrol with value set appropriatly
 
 
   }
 
   addCDType() {
-  alert('cddddddddd');
-      alert(this.musicReleaseForm.value.type);
-      this.musicReleaseForm.value.type= 'CD';
-      alert(this.musicReleaseForm.value.type);
 
      }
 
 
      addCassetteType() {
 
-           this.musicReleaseForm.value.type= 'CASSETTE';
+//           this.musicReleaseForm.value.type= 'CASSETTE';
 
      }
 

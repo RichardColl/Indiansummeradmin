@@ -32,19 +32,19 @@
 
       <div><label>type</label>
           <div>VINYL
-            <input type="radio" formControlName="checktype" id="vinyl" value="VINYL" (click)="addVinylType()"/>
+            <input type="radio" formControlName="checktype" id="vinyl" checked="true" value="VINYL" (click)="addVinylType()"/>
           </div>
         <div>CD
-          <input type="radio" formControlName="checktype" id="cd" value="CD" (click)="addCDType()"/>
+          <input type="radio" formControlName="checktype" id="cd" disabled value="CD" (click)="addCDType()"/>
         </div>
         <div>CASSETTE
-          <input type="radio" formControlName="checktype" id="cassette" value="CASSETTE" (click)="addCassetteType()"/>
+          <input type="radio" formControlName="checktype" id="cassette" disabled value="CASSETTE" (click)="addCassetteType()"/>
         </div>
       </div>
       <div><input  formControlName="type"
                    id="type"
                    [ngClass]=" {'input-text--error': isFieldInvalid('type')}"
-                   name="ngModel" required name="type"  class="form-control" placeholder="type"></div>
+                   name="ngModel" required name="type"  readonly value="VINYL" class="form-control" placeholder="type"></div>
 
       <div>frontcoverimage</div>
       <div><input  formControlName="frontcoverimage"
