@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { MusicReleaseInputData } from '../models/musicrelease.model';
-import { FormBuilder, Validators, FormGroup, FormArray} from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormArray, ValidatorFn,
+AbstractControl, ValidationErrors} from '@angular/forms';
 import { MusicRelease, Track } from '../models/musicrelease.model';
 import { MusicreleaseService } from '../shared/musicrelease/musicrelease.service';
 
@@ -23,6 +24,19 @@ export class CreatemusicreleaseComponent implements OnInit {
   tmptrack = new Track();
   genresarray: string[]= [];
   trackarray: Track[]= [];
+
+
+  checkrangevalidator: ValidatorFn = (
+
+      control: AbstractControl
+     ): ValidationErrors | null => {
+        const start = control.get('releasedate');
+        const end = control.get('releaseaddeddate');
+
+        return start !== null && end !== null && start.value < end.value
+        ? null
+        : { toGreaterThanFrom: true  };
+     };
 
   constructor(private formBuilder : FormBuilder, private musicreleaseServ: MusicreleaseService) {
       this.musicReleaseForm = this.formBuilder.group( {
@@ -187,6 +201,9 @@ export class CreatemusicreleaseComponent implements OnInit {
        //this.musicReleaseForm = this.formBuilder.group({
         //    items: this.formBuilder.array([this.createItem()])
         //  })
+
+        this.musicReleaseForm.setValidators(this.checkrangevalidator);
+
   }
 
 
@@ -208,6 +225,15 @@ export class CreatemusicreleaseComponent implements OnInit {
       );
 
   }
+
+   isRangeInvalid() {
+
+        return( //this syntax doesn't seem to work , maybe for ang 16
+            //this.musicReleaseForm.errors?.['toGreaterThanFrom'] && true
+            this.musicReleaseForm.valid
+        );
+
+    }
 
 
   get title() {

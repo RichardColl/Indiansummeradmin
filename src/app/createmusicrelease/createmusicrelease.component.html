@@ -71,6 +71,9 @@
                    [ngClass]=" {'input-text--error': isFieldInvalid('releaseaddeddate')}"
                    name="ngModel" required name="releaseaddeddate"  type="date" class="form-control"  placeholder="releaseaddeddate"></div>
 
+      <span  *ngIf="isRangeInvalid()">
+          Added date before the released date
+      </span>
       <div>vinylformat</div>
       <div><input  formControlName="vinylformat"
                    [ngClass]=" {'input-text--error': isFieldInvalid('vinylformat')}"
