@@ -124,7 +124,7 @@ export class CreatemusicreleaseComponent implements OnInit {
                                   }
                               ],
           vinylformat: [
-                                  null,
+                                  "1 x LP black vinyl",
                                   {
                                     validators: [
                                       Validators.required,
@@ -226,6 +226,10 @@ export class CreatemusicreleaseComponent implements OnInit {
 
   }
 
+  addgenre(field: string) {
+      alert(field);
+
+}
    isRangeInvalid() {
    //alert('checkrangevalidator');
      //   alert(this.musicReleaseForm.valid);

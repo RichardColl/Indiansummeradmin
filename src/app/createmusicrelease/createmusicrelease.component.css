@@ -1,3 +1,11 @@
 .errmsg {
   color: red;
 }
+
+.fieldcaptions {
+    background-color: #77DD77;
+}
+
+.genrecaptions {
+                   background-color: #FFD1DC;
+   }
