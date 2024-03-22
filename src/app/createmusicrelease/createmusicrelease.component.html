@@ -71,7 +71,7 @@
 
       <ng-container
         *ngIf="viewgenres==true
-                  then displaygenres"
+                  then displaygenres">
       </ng-container>
 
       <ng-template #displaygenres>
@@ -79,7 +79,7 @@
             (input)="addgenre('ELECTRONIC')"
             formControlName="elecchkbox"
           />
-
+        <label>
         <span>
           <strong>
             ELECTRONIC
@@ -87,7 +87,7 @@
         </span>
 
       </label>
-      </div>
+
       </ng-template>
 
       <div *ngIf="displayelectronic">
