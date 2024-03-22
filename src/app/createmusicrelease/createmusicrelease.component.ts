@@ -229,7 +229,16 @@ export class CreatemusicreleaseComponent implements OnInit {
   }
 
   addgenre(field: string) {
-      alert(field);
+
+      this.musicReleaseForm.addControl(
+          'electronic',
+          this.formBuilder.control('', [
+          Validators.required,
+          Validators.maxLength(20)
+          ])
+
+
+      );
 
 }
    isRangeInvalid() {
