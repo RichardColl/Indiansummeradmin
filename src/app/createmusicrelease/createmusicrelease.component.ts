@@ -240,6 +240,9 @@ export class CreatemusicreleaseComponent implements OnInit {
 
       );
 
+      this.musicReleaseForm.updateValueAndValidity();
+      this.displayelectronic = true;
+
 }
    isRangeInvalid() {
    //alert('checkrangevalidator');
