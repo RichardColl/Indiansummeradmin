@@ -24,6 +24,8 @@ export class CreatemusicreleaseComponent implements OnInit {
   tmptrack = new Track();
   genresarray: string[]= [];
   trackarray: Track[]= [];
+  viewgenres = true;
+  displayelectronic = false;
 
 
   checkrangevalidator: ValidatorFn = (

@@ -69,22 +69,35 @@
 
       <div class="fieldcaptions">Add some more genres</div>
 
-      <div class="genrecaptions">
-      <label>
-          <input
+      <ng-container
+        *ngIf="viewgenres==true
+                  then displaygenres"
+      </ng-container>
+
+      <ng-template #displaygenres>
             type="checkbox"
             (input)="addgenre('ELECTRONIC')"
-            formControlName="punkchkbox"
+            formControlName="elecchkbox"
           />
 
         <span>
           <strong>
-            PUNK
+            ELECTRONIC
           </strong>
         </span>
 
       </label>
       </div>
+      </ng-template>
+
+      <div *ngIf="displayelectronic">
+
+        <div><input  formControlName="electronic"
+                     [ngClass]=" {'input-text--error': isFieldInvalid('electronic')}"
+                     name="ngModel" required name="electronic"  readonly value="ELECTRONIC" class="form-control" placeholder="electronic"></div>
+
+      </div>
+
       <div class="fieldcaptions">releasedate</div>
       <div><input  formControlName="releasedate"
                    [ngClass]=" {'input-text--error': isFieldInvalid('releasedate')}"
