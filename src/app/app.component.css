@@ -1,9 +1,37 @@
 h1 {
 
    color: #fff;
-   font-style: italic;
-   font-family: Broadway;
+
+
    font-size: 34px;
    margin-left: 10%;
 
  }
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../assets/JosefinSans-VariableFont_wght.ttf');
+}
+
+
+div {
+font-family: 'MyFont';
+
+ color: #fff;
+
+
+   font-size: 34px;
+   margin-left: 10%;
+
+
+}
+.my-component {
+   font-family: 'MyFont';
+ }
+
+.xmy-component {
+
+ }
+
+
+

@@ -232,7 +232,7 @@ export class CreatemusicreleaseComponent implements OnInit {
 
       this.musicReleaseForm.addControl(
           'electronic',
-          this.formBuilder.control('', [
+          this.formBuilder.control('ELECTRONIC', [
           Validators.required,
           Validators.maxLength(20)
           ])
