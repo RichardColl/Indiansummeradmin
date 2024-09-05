@@ -21,7 +21,7 @@ export class DisplayededitmusicreleaselistComponent implements OnInit {
 
   ngOnInit() {
 
-     this.musicreleaseService.getAllMusicReleasesByReleaseaddeddateDesc().subscribe(data => {
+     this.musicreleaseService.findByRecentRelease().subscribe(data => {
 
       if (data) {
 
