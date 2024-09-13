@@ -26,6 +26,7 @@ export class CreatemusicreleaseComponent implements OnInit {
   trackarray: Track[]= [];
   viewgenres = true;
   displayelectronic = false;
+  pricepaideuro :any;
 
 
   checkrangevalidator: ValidatorFn = (
@@ -188,6 +189,44 @@ export class CreatemusicreleaseComponent implements OnInit {
                                     ]
                                   }
                               ],
+           pricepaidsterling: [
+                       null,
+                       {
+                       validators: [
+                             Validators.required,
+                             Validators.maxLength(5)
+                       ]
+                     }
+                    ],
+
+            exchangerate: [
+                       null,
+                       {
+                       validators: [
+                             Validators.required,
+                             Validators.maxLength(6)
+                       ]
+                     }
+                    ],
+            invoiceno: [
+                        null,
+                        {
+                        validators: [
+                              Validators.required,
+                              Validators.maxLength(12)
+                        ]
+                      }
+                     ],
+
+                datepaid: [
+                      null,
+                        {
+                          validators: [
+                              Validators.required,
+                              Validators.maxLength(20)
+                          ]
+                         }
+                  ],
 
           releaseaddeddate: [new Date()]
 
@@ -208,6 +247,11 @@ export class CreatemusicreleaseComponent implements OnInit {
 
   }
 
+
+ updateToEuro() {
+      this.pricepaideuro =    this.musicReleaseForm.value.pricepaidsterling / this.musicReleaseForm.value.exchangerate;
+
+ }
 
   createItem() {
       return this.formBuilder.group({
@@ -314,6 +358,13 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.musicrelease.instock = this.musicReleaseForm.value.instock;
         this.musicrelease.releaseyear = this.musicReleaseForm.value.releaseyear;
 
+        this.musicrelease.pricepaidsterling= this.musicReleaseForm.value.pricepaidsterling;
+        this.musicrelease.exchangerate= this.musicReleaseForm.value.exchangerate;
+        this.musicrelease.pricepaideuro= this.musicReleaseForm.value.pricepaidsterling/this.musicReleaseForm.value.exchangerate;
+        this.musicrelease.invoiceno= this.musicReleaseForm.value.invoiceno;
+        this.musicrelease.datepaid= this.musicReleaseForm.value.datepaid;
+
+        alert(this.musicrelease.pricepaideuro);
           this.musicreleaseServ.save(this.musicrelease)
                                  .subscribe(
                                      data => {

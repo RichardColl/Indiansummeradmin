@@ -21,6 +21,12 @@ export class MusicRelease {
      instock: any;
      releaseyear: string;
 
+     pricepaidsterling: any;
+     exchangerate: any;
+     pricepaideuro: any;
+     invoiceno: string;
+     datepaid: string;
+
 }
 
 export class Track {

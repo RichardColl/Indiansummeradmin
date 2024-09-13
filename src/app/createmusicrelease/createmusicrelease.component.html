@@ -147,6 +147,31 @@
                    [ngClass]=" {'input-text--error': isFieldInvalid('releaseyear')}"
                    name="ngModel" required name="releaseyear"   class="form-control" placeholder="releaseyear"></div>
 
+      <div class="fieldcaptions">Price paid Sterling</div>
+      <div><input  formControlName="pricepaidsterling"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('pricepaidsterling')}"
+                   name="ngModel" required name="pricepaidsterling"   class="form-control" placeholder="pricepaidsterling"></div>
+
+
+      <div class="fieldcaptions">Exchange Rate</div>
+      <div><input  formControlName="exchangerate"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('exchangerate')}"
+                   name="ngModel" required name="exchangerate"   class="form-control" placeholder="exchangerate"></div>
+
+      <div class="fieldcaptions">Price paid Euro</div>
+      <button (click)="updateToEuro">+</button>
+      <div>{{ pricepaideuro }}</div>
+
+
+      <div class="fieldcaptions">Invoice Number</div>
+      <div><input  formControlName="invoiceno"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('invoiceno')}"
+                   name="ngModel" required name="invoiceno"   class="form-control" placeholder="invoiceno"></div>
+
+      <div class="fieldcaptions">Date Paid</div>
+      <div><input  formControlName="datepaid"
+                   [ngClass]=" {'input-text--error': isFieldInvalid('datepaid')}"
+                   name="ngModel" required name="datepaid"  type="date"  class="form-control" placeholder="datepaid"></div>
 
       <button mat-raised-button color="primary" type="submit" >Submit</button>
 
