@@ -244,12 +244,14 @@ export class CreatemusicreleaseComponent implements OnInit {
         //  })
 
         this.musicReleaseForm.setValidators(this.checkrangevalidator);
+        this.pricepaideuro = '0.00';
 
   }
 
 
  updateToEuro() {
       this.pricepaideuro =    this.musicReleaseForm.value.pricepaidsterling / this.musicReleaseForm.value.exchangerate;
+      alert(this.pricepaideuro);
 
  }
 
@@ -364,7 +366,7 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.musicrelease.invoiceno= this.musicReleaseForm.value.invoiceno;
         this.musicrelease.datepaid= this.musicReleaseForm.value.datepaid;
 
-        alert(this.musicrelease.pricepaideuro);
+
           this.musicreleaseServ.save(this.musicrelease)
                                  .subscribe(
                                      data => {

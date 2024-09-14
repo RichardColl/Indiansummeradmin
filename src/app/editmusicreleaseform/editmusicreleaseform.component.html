@@ -216,8 +216,57 @@
         </mat-form-field>
       </div>
 
+      <div>
+        <mat-form-field>
 
 
+
+          <input matInput [(ngModel)]="musicrelease.pricepaidsterling" name="ngModel" required name="pricepaidsterling" class="form-control" placeholder="pricepaidsterling">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.exchangerate" name="ngModel" required name="exchangerate" class="form-control" placeholder="exchangerate">
+
+
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <mat-form-field>
+
+
+
+          <input matInput [(ngModel)]="musicrelease.updateToEuro" name="ngModel" required name="updateToEuro" class="form-control" placeholder="updateToEuro">
+
+
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+
+          <input matInput [(ngModel)]="musicrelease.invoiceno" name="ngModel" required name="invoiceno" class="form-control" placeholder="invoiceno">
+
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <mat-form-field>
+
+          <input matInput [(ngModel)]="musicrelease.datepaid" name="ngModel" required name="datepaid" class="form-control" placeholder="datepaid">
+
+
+        </mat-form-field>
+      </div>
 
       <mat-card-actions>
         <button mat-raised-button color="primary" type="submit" [disabled]="updatemusicreleaseForm.invalid">Save</button>
