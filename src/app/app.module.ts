@@ -32,6 +32,7 @@ import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicr
 import { SummarycontainerComponent } from './summarycontainer/summarycontainer.component';
 import { MusicreleasecontainerComponent } from './musicreleasecontainer/musicreleasecontainer.component';
 import { CreatemusicreleaseComponent } from './createmusicrelease/createmusicrelease.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CreatemusicreleaseComponent } from './createmusicrelease/createmusicrel
     MusicreleasescontainerComponent,
     SummarycontainerComponent,
     MusicreleasecontainerComponent,
-    CreatemusicreleaseComponent
+    CreatemusicreleaseComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
