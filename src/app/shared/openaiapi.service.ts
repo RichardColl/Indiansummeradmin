@@ -19,7 +19,7 @@ export class OpenaiapiService {
             'Authorization': `Bearer ${environment.apiKey}`
           });
 
-      return this.http.post<any>(`${this.apiUrl}`, { model: 'gpt-4o-mini', messages: message }, { headers } );
+      return this.http.post<any>(`${this.apiUrl}`, { model: 'gpt-3.5-turbo', messages: message }, { headers } );
       //return this.http.post<any>(`${this.apiUrl}`, { model: 'gpt-4o-mini', messages: message }, { this.headers });
     }
 }
