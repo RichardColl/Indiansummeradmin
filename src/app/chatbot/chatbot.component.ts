@@ -56,8 +56,8 @@ export class ChatbotComponent {
               this.trackarray.push(this.tmptrack);
               this.musicrelease.tracks= this.trackarray;
 
-              this.musicrelease.releasedate = '27/11/24';
-              this.musicrelease.releaseaddeddate = '27/11/24';
+              this.musicrelease.releasedate = '2024-11-27T00:00:00.000+00:00';
+              this.musicrelease.releaseaddeddate = '2024-11-27T00:00:00.000+00:00';
               this.musicrelease.vinylformat = '1 x LP black vinyl';
               this.musicrelease.label = obj.label;
               this.musicrelease.catalogueno = '1';
