@@ -38,7 +38,7 @@ fdescribe('ArtistService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return in INITIAL state', () => {
+  it('should return in initial state', () => {
       const service: ArtistService = TestBed.get(ArtistService);
       service.serviceData$.pipe(take(1)).subscribe(data => {
         expect(data.artistServiceState).toEqual(ServiceState.INITIAL);
