@@ -1,11 +1,30 @@
-<h1>
-  Music Releases Container
-</h1>
+<mat-card>
 
-<div id="release">
+  <mat-card-content>
 
-  <button id="musiclistinc" mat-button routerLink="/displayededitmusicreleaselist">Musicrelease list</button>
-  <button id="createmrinc" mat-button routerLink="/createmusicreleaseform">Create Music Release</button>
-  <button id="createmrincbc" mat-button routerLink="/createmusicreleaseformfrombarcode">Create Music Release from Barcode</button>
+    <mat-card-header>
+      <mat-card-title><h2 id="header">  Artist Container RXJS using Async pipe to Java Reactive and Mono stream</h2></mat-card-title>
+    </mat-card-header>
 
-</div>
+
+    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+      <mat-spinner color="primary"></mat-spinner>
+    </div>
+
+    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
+      <div *ngFor="let release of result">
+        <div id="release" fxLayout="row" fxLayoutGap="10">
+          <div fxFlex="20%">
+            <a id="gotoartist" [routerLink]="['/editartistform', release.id]" >
+              <img   src="https://indiansummerrecordsserver.herokuapp.com/images/{{release.menuimage}}" alt="photo" width="5%" height="5%"/></a>
+          </div>
+          <div fxFlex="80%">
+            <h3>{{release.name}}</h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
