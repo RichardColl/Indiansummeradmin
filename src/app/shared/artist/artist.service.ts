@@ -37,6 +37,15 @@ export class ArtistService {
             });
     serviceData$ = this._serviceData$.asObservable();
 
+    private _artistserviceData$:BehaviorSubject<ArtistServiceData>
+                           = new BehaviorSubject({
+                                    artistServiceState: ServiceState.INITIAL,
+                                    artistDetails: null
+
+                });
+
+    artistserviceData$ = this._artistserviceData$.asObservable();
+
 
     constructor(private http: HttpClient) { }
 
@@ -175,6 +184,37 @@ export class ArtistService {
 
                       return this.http.get(this.ARTIST_API + '/'  + 'search/findAllByDisplayTrue', httpOptions);
            }
+
+
+
+            getMonoArtistByID()    {
+
+                    this._artistserviceData$.next( {
+                          ...this._artistserviceData$.value,
+                                     artistServiceState: ServiceState.IN_PROGRESS
+                    });
+
+                                 return  this.http
+                                      .get<ArtistCollection>(this.API + '/monoFindByArtistId/?ID=' + '610ad22b1d23272b4f8d38e0')
+                                      .pipe(
+                                         tap(data => {
+                                             this._artistserviceData$.next({
+                                                ...this._artistserviceData$.value,
+                                                artistServiceState: ServiceState.SUCCESS,
+                                                artistDetails: data
+                                             });
+                                         }),
+                                         catchError(err => {
+                                             this._artistserviceData$.next({
+                                               ...this._artistserviceData$.value,
+                                               artistServiceState: ServiceState.ERROR
+                                             });
+                                             return [];
+                                          })
+                                       )
+                                       .subscribe();
+
+                           }
 
 
              getArtistsByDisplay()    {

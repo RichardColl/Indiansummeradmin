@@ -34,6 +34,23 @@ export class MusicreleasescontainerComponent implements OnInit {
                 private artistService: ArtistService,  private readonly adminDispatcher: AdminDispatcher) { }
 
 
+  displayMonoArtistsOptionsState$:Observable<ServiceState>
+              = this.artistService.artistserviceData$.pipe(
+                map(({ artistServiceState, artistDetails }) => {
+
+                if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
+                  this.thedata = artistMonoDetails;
+                  this.collection.data = this.thedata._embedded.artists;
+                  this.result.push(this.collection.data[0]);
+
+                }
+
+                return artistServiceState;
+                })
+              );
+
+  artistMonoDetails: ArtistData;
+
   displayArtistsOptionsState$:Observable<ServiceState>
             = this.artistService.serviceData$.pipe(
               map(({ artistServiceState, artistDetails }) => {
@@ -68,7 +85,7 @@ export class MusicreleasescontainerComponent implements OnInit {
 
   ngOnInit() {
 
-    this.artistService.getArtistsByDisplay();
+    this.artistService.getMonoArtistByID();
 
   }
 

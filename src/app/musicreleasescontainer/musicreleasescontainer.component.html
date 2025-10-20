@@ -7,11 +7,11 @@
     </mat-card-header>
 
 
-    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+    <div *ngIf="( displayMonoArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
       <mat-spinner color="primary"></mat-spinner>
     </div>
 
-    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
+    <div *ngIf="( displayMonoArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
       <div *ngFor="let release of result">
         <div id="release" fxLayout="row" fxLayoutGap="10">
           <div fxFlex="20%">
