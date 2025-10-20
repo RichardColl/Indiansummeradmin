@@ -41,8 +41,8 @@ export class MusicreleasescontainerComponent implements OnInit {
 
               if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
                 this.thedata = artistDetails;
-                this.collection.data = this.thedata._embedded.artists;
-                this.result.push(this.collection.data[0]);
+         //       this.collection.data = this.thedata._embedded.artists;
+         //       this.result.push(this.collection.data[0]);
 
               }
 
