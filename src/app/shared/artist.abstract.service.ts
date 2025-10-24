@@ -13,8 +13,8 @@ export interface ArtistComboData {
     name: string;
     menuimage: string;
     history: string;
-    relatedname: string;
-    relatedhistory: string;
+    relatedName: string;
+    relatedHistory: string;
 
 }
 

@@ -29,6 +29,7 @@
     <div>
       Is Related To showing combined results
     </div>
+
     <div *ngIf="( displayComboArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
       <div id="release" fxLayout="row" fxLayoutGap="10">
@@ -36,13 +37,7 @@
           <a id="gotoartist" [routerLink]="['/editartistform', theCombodata.id]" >
             <img   src="https://indiansummerrecordsserver.herokuapp.com/images/{{theCombodata.menuimage}}" alt="photo" width="5%" height="5%"/></a>
         </div>
-        <div>
-          Combined the data with this related artist
-        </div>
-        <div>
-          <h3>{{theCombodata.relatedName}}</h3>
-          <p>{{theCombodata.relatedHistory}}</p>
-        </div>
+
         <div fxFlex="80%">
           <h3>{{thedata.name}}</h3>
 
@@ -50,6 +45,8 @@
       </div>
 
     </div>
+
+
 
   </mat-card-content>
 </mat-card>
