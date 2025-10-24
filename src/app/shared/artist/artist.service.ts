@@ -35,6 +35,7 @@ export class ArtistService {
                                 artistDetails: null
 
             });
+
     serviceData$ = this._serviceData$.asObservable();
 
     private _artistserviceData$:BehaviorSubject<ArtistServiceData>
@@ -42,9 +43,18 @@ export class ArtistService {
                                     artistServiceState: ServiceState.INITIAL,
                                     artistDetails: null
 
-                });
+      });
 
     artistserviceData$ = this._artistserviceData$.asObservable();
+
+    private _artistserviceDataCombo$:BehaviorSubject<ArtistServiceData>
+                               = new BehaviorSubject({
+                                        artistServiceState: ServiceState.INITIAL,
+                                        artistDetails: null
+
+      });
+
+    artistserviceDataCombo$ = this._artistserviceDataCombo$.asObservable();
 
 
     constructor(private http: HttpClient) { }
@@ -215,6 +225,36 @@ export class ArtistService {
                                        .subscribe();
 
                            }
+
+
+                getComboMonoArtistByID()    {
+
+                    this._artistserviceDataCombo$.next( {
+                          ...this._artistserviceDataCombo$.value,
+                                     artistServiceState: ServiceState.IN_PROGRESS
+                    });
+
+                                 return  this.http
+                                      .get<ArtistCollection>(this.API + '/monoComboFindByArtistId/?ID=' + '610ad22b1d23272b4f8d38e0')
+                                      .pipe(
+                                         tap(data => {
+                                             this._artistserviceDataCombo$.next({
+                                                ...this._artistserviceDataCombo$.value,
+                                                artistServiceState: ServiceState.SUCCESS,
+                                                artistDetails: data
+                                             });
+                                         }),
+                                         catchError(err => {
+                                             this._artistserviceDataCombo$.next({
+                                               ...this._artistserviceDataCombo$.value,
+                                               artistServiceState: ServiceState.ERROR
+                                             });
+                                             return [];
+                                          })
+                                       )
+                                       .subscribe();
+
+             }
 
 
              getArtistsByDisplay()    {
