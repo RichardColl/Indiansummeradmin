@@ -32,7 +32,8 @@ export class ArtistService {
     private _serviceData$:BehaviorSubject<ArtistServiceData>
                        = new BehaviorSubject({
                                 artistServiceState: ServiceState.INITIAL,
-                                artistDetails: null
+                                artistDetails: null,
+                                artistComboDetails: null
 
             });
 
@@ -41,7 +42,8 @@ export class ArtistService {
     private _artistserviceData$:BehaviorSubject<ArtistServiceData>
                            = new BehaviorSubject({
                                     artistServiceState: ServiceState.INITIAL,
-                                    artistDetails: null
+                                    artistDetails: null,
+                                    artistComboDetails: null
 
       });
 
@@ -50,7 +52,8 @@ export class ArtistService {
     private _artistserviceDataCombo$:BehaviorSubject<ArtistServiceData>
                                = new BehaviorSubject({
                                         artistServiceState: ServiceState.INITIAL,
-                                        artistDetails: null
+                                        artistDetails: null,
+                                        artistComboDetails: null
 
       });
 
