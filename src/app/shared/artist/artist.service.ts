@@ -9,6 +9,7 @@ import { ArtistServiceData } from '../artist.abstract.service';
 import { ServiceState } from '../main-api.service';
 import { ArtistCollection } from '../artist.abstract.service';
 import { catchError, map, tap} from 'rxjs/operators';
+import { ArtistComboCollection } from '../artist.abstract.service';
 
 
 
