@@ -238,13 +238,13 @@ export class ArtistService {
                     });
 
                                  return  this.http
-                                      .get<ArtistCollection>(this.API + '/monoComboFindByArtistId/?ID=' + '610ad22b1d23272b4f8d38e0')
+                                      .get<ArtistComboCollection>(this.API + '/monoComboFindByArtistId/?ID=' + '610ad22b1d23272b4f8d38e0')
                                       .pipe(
                                          tap(data => {
                                              this._artistserviceDataCombo$.next({
                                                 ...this._artistserviceDataCombo$.value,
                                                 artistServiceState: ServiceState.SUCCESS,
-                                                artistDetails: data
+                                                artistComboDetails: data
                                              });
                                          }),
                                          catchError(err => {
