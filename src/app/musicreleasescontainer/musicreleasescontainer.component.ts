@@ -62,12 +62,9 @@ export class MusicreleasescontainerComponent implements OnInit {
                  map(({ artistServiceState, artistComboDetails }) => {
 
                  if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
-                  console.log('*************');
-                  console.log(artistComboDetails);
-                  console.log('*************');
-                   this.theCombodata = artistComboDetails;
-            //       this.collection.data = this.thedata._embedded.artists;
-            //       this.result.push(this.collection.data[0]);
+
+                      this.theCombodata = artistComboDetails;
+
 
                  }
 
