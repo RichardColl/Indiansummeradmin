@@ -15,7 +15,7 @@ export interface ArtistComboData {
     history: string;
     relatedName: string;
     relatedHistory: string;
-
+    relatedMenuimage: string;
 }
 
 export interface ArtistCollection {

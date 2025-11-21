@@ -15,7 +15,7 @@ import { ArtistconnectionsComponent } from './artistconnections/artistconnection
 const routes: Routes = [
                          {
                            path: '',
-                           component: LoginComponent
+                           component: IndiansummeradminComponent
 
                          }
                           , {

@@ -36,7 +36,10 @@ export class MusicreleasescontainerComponent implements OnInit {
                 private artistService: ArtistService,  private readonly adminDispatcher: AdminDispatcher) { }
 
 
-
+  //following the stateless Observable service pattern the ServiceState is not held in the component
+  // we use the async pipe mechanism to subscribe to the displayArtistsOptionsState$ Observable
+  //and check for the IN_PROGRESS state to display a spinner until a SUCCESS state is emitted which allows us then to
+  //get access to the emitted artist details for display in the template
   displayArtistsOptionsState$:Observable<ServiceState>
             = this.artistService.artistserviceData$.pipe(
               map(({ artistServiceState, artistDetails }) => {
@@ -44,8 +47,6 @@ export class MusicreleasescontainerComponent implements OnInit {
               if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
 
                 this.thedata = artistDetails;
-         //       this.collection.data = this.thedata._embedded.artists;
-         //       this.result.push(this.collection.data[0]);
 
               }
 
