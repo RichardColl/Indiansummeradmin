@@ -37,7 +37,8 @@ export class ArtistService {
                        = new BehaviorSubject({
                                 artistServiceState: ServiceState.INITIAL,
                                 artistDetails: null,
-                                artistComboDetails: null
+                                artistComboDetails: null,
+                                artistMonoDetails: null
 
             });
 
@@ -54,7 +55,8 @@ export class ArtistService {
                            = new BehaviorSubject({
                                     artistServiceState: ServiceState.INITIAL,
                                     artistDetails: null,
-                                    artistComboDetails: null
+                                    artistComboDetails: null,
+                                    artistMonoDetails: null
 
       });
 
@@ -64,7 +66,8 @@ export class ArtistService {
                                = new BehaviorSubject({
                                         artistServiceState: ServiceState.INITIAL,
                                         artistDetails: null,
-                                        artistComboDetails: null
+                                        artistComboDetails: null,
+                                        artistMonoDetails: null
 
       });
 
@@ -74,6 +77,7 @@ export class ArtistService {
                                    = new BehaviorSubject({
                                             artistServiceState: ServiceState.INITIAL,
                                             artistDetails: null,
+                                            artistComboDetails: null,
                                             artistMonoDetails: null
 
           });
