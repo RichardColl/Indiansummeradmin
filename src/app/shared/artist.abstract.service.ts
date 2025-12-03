@@ -8,6 +8,13 @@ export interface ArtistData {
     history: string;
 }
 
+export interface ArtistMonoData {
+    id: any;
+    name: string;
+    menuimage: string;
+    history: string;
+}
+
 export interface ArtistComboData {
     id: any;
     name: string;
@@ -26,7 +33,9 @@ export interface ArtistComboCollection {
    theartistscombo: Array<ArtistComboData>;
 }
 
-
+export interface ArtistMonoCollection {
+   theartistsmono: Array<ArtistMonoData>;
+}
 
 
 

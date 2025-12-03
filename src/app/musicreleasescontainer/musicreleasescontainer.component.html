@@ -8,11 +8,11 @@ using  Java Reactive and Mono stream with first call and 2nd async call aggregat
     </mat-card-header>
 
 
-    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+    <div *ngIf="( displayMonoArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
       <mat-spinner color="primary"></mat-spinner>
     </div>
 
-    <div *ngIf="( displayArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
+    <div *ngIf="( displayMonoArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
         <div id="release" fxLayout="row" fxLayoutGap="10">
           <div fxFlex="20%">

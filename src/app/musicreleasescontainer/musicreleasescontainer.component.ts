@@ -12,6 +12,7 @@ import { map, tap } from 'rxjs/operators';
 import { ServiceState } from '../shared/main-api.service';
 import { ArtistData } from '../shared/artist.abstract.service';
 import { ArtistComboData } from '../shared/artist.abstract.service';
+import { ArtistMonoData } from '../shared/artist.abstract.service';
 
 
 
@@ -28,6 +29,7 @@ export class MusicreleasescontainerComponent implements OnInit {
         collection = { count: 6, data: [] };
         thedata:any;
         theCombodata:any;
+        theMonodata:any;
         result = [];
 
         ServiceStateEnum = ServiceState;
@@ -56,8 +58,6 @@ export class MusicreleasescontainerComponent implements OnInit {
 
           artistDetails: ArtistData;
 
-
-
    displayComboArtistsOptionsState$:Observable<ServiceState>
                = this.artistService.artistserviceDataCombo$.pipe(
                  map(({ artistServiceState, artistComboDetails }) => {
@@ -74,6 +74,27 @@ export class MusicreleasescontainerComponent implements OnInit {
                );
 
      artistComboDetails: ArtistComboData;
+
+
+     displayMonoArtistsOptionsState$:Observable<ServiceState>
+                    = this.artistService.artistserviceDataMono$.pipe(
+                      map(({ artistServiceState, artistMonoDetails }) => {
+
+                      if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
+
+                           this.theMonodata = artistMonoDetails;
+
+
+                      }
+
+                      return artistServiceState;
+                      })
+               );
+
+     artistMonoDetails: ArtistMonoData;
+
+
+
 
     readonly viewData$ = this.artistService.serviceData$.pipe(
 

@@ -10,7 +10,7 @@ import { ServiceState } from '../main-api.service';
 import { ArtistCollection } from '../artist.abstract.service';
 import { catchError, map, tap} from 'rxjs/operators';
 import { ArtistComboCollection } from '../artist.abstract.service';
-
+import { ArtistMonoCollection } from '../artist.abstract.service';
 
 
 const httpOptions = {
@@ -69,6 +69,16 @@ export class ArtistService {
       });
 
     artistserviceDataCombo$ = this._artistserviceDataCombo$.asObservable();
+
+     private _artistserviceDataMono$:BehaviorSubject<ArtistServiceData>
+                                   = new BehaviorSubject({
+                                            artistServiceState: ServiceState.INITIAL,
+                                            artistDetails: null,
+                                            artistMonoDetails: null
+
+          });
+
+        artistserviceDataMono$ = this._artistserviceDataMono$.asObservable();
 
 
     constructor(private http: HttpClient) { }
@@ -213,24 +223,24 @@ export class ArtistService {
 
             getMonoArtistByID()    {
 
-                    this._artistserviceData$.next( {
-                          ...this._artistserviceData$.value,
+                    this._artistserviceDataMono$.next( {
+                          ...this._artistserviceDataMono$.value,
                                      artistServiceState: ServiceState.IN_PROGRESS
                     });
 
                                  return  this.http
-                                      .get<ArtistCollection>(this.API + '/monoFindByArtistId/?ID=' + '610ad22b1d23272b4f8d38e0')
+                                      .get<ArtistMonoCollection>(this.API + '/monoFindByArtistId/?ID=' + '610ad22b1d23272b4f8d38e0')
                                       .pipe(
                                          tap(data => {
-                                             this._artistserviceData$.next({
-                                                ...this._artistserviceData$.value,
+                                             this._artistserviceDataMono$.next({
+                                                ...this._artistserviceDataMono$.value,
                                                 artistServiceState: ServiceState.SUCCESS,
-                                                artistDetails: data
+                                                artistMonoDetails: data
                                              });
                                          }),
                                          catchError(err => {
-                                             this._artistserviceData$.next({
-                                               ...this._artistserviceData$.value,
+                                             this._artistserviceDataMono$.next({
+                                               ...this._artistserviceDataMono$.value,
                                                artistServiceState: ServiceState.ERROR
                                              });
                                              return [];
