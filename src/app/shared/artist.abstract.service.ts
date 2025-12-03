@@ -43,7 +43,8 @@ export interface ArtistServiceData {
 
     artistServiceState: ServiceState;
     artistDetails: ArtistCollection;
-    artistComboDetails:ArtistComboCollection
+    artistComboDetails:ArtistComboCollection;
+    artistMonoDetails:ArtistMonoCollection;
 
 
 }
