@@ -11,7 +11,7 @@ import { EditmusicreleaseformComponent } from './editmusicreleaseform/editmusicr
 import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmin.component';
 import { DisplayededitmusicreleaselistComponent } from './displayededitmusicreleaselist/displayededitmusicreleaselist.component';
 import { ArtistconnectionsComponent } from './artistconnections/artistconnections.component';
-import { MusicreleasescontainerComponent } from './musicreleasescontainer/MusicreleasescontainerComponent.component';
+import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicreleasescontainer.component';
 
 
 const routes: Routes = [
