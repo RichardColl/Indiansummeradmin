@@ -43,6 +43,9 @@ export class ArtistscontainerComponent implements OnInit {
               this.thedata = artistDetails;
               this.collection.data = this.thedata._embedded.artists;
               this.result.push(this.collection.data[this.randomInteger(10, 50)]);
+               this.result.push(this.collection.data[this.randomInteger(11, 40)]);
+
+
 
             }
 
