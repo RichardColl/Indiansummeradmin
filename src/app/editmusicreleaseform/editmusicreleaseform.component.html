@@ -268,7 +268,9 @@
         </mat-form-field>
       </div>
 
-
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="updatemusicreleaseForm.invalid">Save</button>
+      </mat-card-actions>
     </form>
 
     <h2>{{result}}</h2>
