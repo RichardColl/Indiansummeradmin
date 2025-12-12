@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CreateartistformComponent } from './createartistform/createartistform.component';
 import { CreatemusicreleaseComponent } from './createmusicrelease/createmusicrelease.component';
-import { ChatbotComponent } from './chatbot/chatbot.component';
+
 import { LoginComponent } from './login/login.component';
 import { DisplayeditartistlistComponent } from './displayeditartistlist/displayeditartistlist.component';
 import { EditartistformComponent } from './editartistform/editartistform.component';
@@ -36,9 +36,6 @@ const routes: Routes = [
                                                     }, {
                                                       path: 'createmusicreleaseform',
                                                       component: CreatemusicreleaseComponent
-                                                   }, {
-                                                      path: 'createmusicreleaseformfrombarcode',
-                                                            component: ChatbotComponent
 
                                                    }, {
                                                       path: 'showmusicreleasescontainer',
