@@ -4,6 +4,8 @@
 
     <mat-card-header>
       <mat-card-title><h2 id="header">Track  Container making calls by subscribing to the behaviourSubject using the async pipe method
+        to subscribe to an observable created by calling the
+        TrackService
 
         </h2></mat-card-title>
     </mat-card-header>
@@ -14,9 +16,23 @@
     </div>
 
     <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.SUCCESS">
-      <h2>{{thedata.title}}</h2>
-      <h2>{{thedata.trackno}}</h2>
-      <h2>{{thedata.length}}</h2>
+
+      <div>Track Number is :
+        <p>data.trackno}}</p></div>
+
+      <div>Track Title is :
+        <p>data.title}}</p></div>
+
+      <div>Track Length is :
+        <p>data.length}}</p></div>
+
+
+    </div>
+
+
+    <div id="release">
+      <button id="artlistinc" mat-button routerLink="/showmusicreleasescontainer"><p>Click here to make calls to Java Reactive >>></p></button>
+
     </div>
 
   </mat-card-content>
