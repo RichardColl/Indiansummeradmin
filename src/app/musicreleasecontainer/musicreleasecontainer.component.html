@@ -1,1 +1,27 @@
-<p>musicreleasecontainer works!</p>
+<mat-card>
+
+  <mat-card-content>
+
+    <mat-card-header>
+      <mat-card-title><h2 id="header">Track  Container making calls by subscribing to the behaviourSubject using the async pipe method
+
+        </h2></mat-card-title>
+    </mat-card-header>
+
+
+    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+      <mat-spinner color="primary"></mat-spinner>
+    </div>
+
+    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.SUCCESS">
+      <h2>{{thedata.title}}</h2>
+      <h2>{{thedata.trackno}}</h2>
+      <h2>{{thedata.length}}</h2>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
