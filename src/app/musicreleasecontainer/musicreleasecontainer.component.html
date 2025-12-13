@@ -17,6 +17,9 @@
 
     <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
+      <div class="tracks">Artist is : St.Etienne </div>
+      <div class="tracks">Album is : Sound of Water </div>
+
       <div class="tracks">Track Number is :
         {{thedata.trackno}}</div>
 
@@ -28,7 +31,7 @@
 
 
     </div>
-
+    <br><br><br>
 
     <div id="release">
       <button id="artlistinc" mat-button routerLink="/showmusicreleasescontainer"><p>Click here to make calls to Java Reactive >>></p></button>

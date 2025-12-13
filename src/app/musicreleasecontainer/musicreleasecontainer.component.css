@@ -6,9 +6,10 @@
 
 
 #release {
-
+  padding-top:20px;
   background-color: #f0f0f0;
-
+  font-size: 20px;
+  font-family: sans-serif;
 }
 
 
@@ -16,7 +17,7 @@ p {
 
    color: #000000;
 
-   font-family: Impact, Charcoal, sans-serif;
+   font-family: Arial, Impact, Charcoal, sans-serif;
    font-size: 20px;
 
 }
