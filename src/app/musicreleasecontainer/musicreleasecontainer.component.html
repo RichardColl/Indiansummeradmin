@@ -17,14 +17,14 @@
 
     <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
-      <div>Track Number is :
-        <p>data.trackno}}</p></div>
+      <div class="tracks">Track Number is :
+        <p>{{data.trackno}}</p></div>
 
-      <div>Track Title is :
-        <p>data.title}}</p></div>
+      <div class="tracks">Track Title is :
+        <p>{{data.title}}</p></div>
 
-      <div>Track Length is :
-        <p>data.length}}</p></div>
+      <div class="tracks">Track Length is :
+        <p>{{data.length}}</p></div>
 
 
     </div>
