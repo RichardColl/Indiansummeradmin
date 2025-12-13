@@ -2,14 +2,17 @@
     font-family: 'Courier New', monospace;
     background-color: beige;
     border: 2px solid green;
+     font-size: 25px;
+       font-weight: bold;
   }
 
 
 #release {
   padding-top:20px;
-  background-color: #f0f0f0;
-  font-size: 20px;
+  background-color: #f0f066;
+  font-size: 30px;
   font-family: sans-serif;
+
 }
 
 
