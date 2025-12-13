@@ -38,17 +38,17 @@ export class MusicreleasecontainerComponent implements OnInit {
 
               }
 
-              return artistServiceState;
+              return trackServiceState;
               })
             );
 
-          artistDetails: ArtistData;
+          trackDetails: TrackData;
 
 
   ngOnInit() {
 
 
-      this.trackService.getArtistsByDisplay();
+      this.trackService.getTrackByID('693d6f4f2aef37d30df1421a');
   }
 
 }
