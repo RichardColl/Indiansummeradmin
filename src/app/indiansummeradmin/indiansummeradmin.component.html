@@ -3,64 +3,14 @@
 
   <mat-card-content>
 
+    <app-summarycontainer></app-summarycontainer>
+
+    <artistscontainer></artistscontainer>
+
+    <app-musicreleasecontainer></app-musicreleasecontainer>
 
   </mat-card-content>
 </mat-card>
-
-<ng-container [ngSwitch]="viewState$ | async">
-
-  <ng-container *ngSwitchCase="'in_progress'">
-
-    <ng-container *ngTemplateOutlet="isloading"></ng-container>
-
-  </ng-container>
-  <ng-container *ngSwitchCase="'success'">
-
-    <ng-container *ngTemplateOutlet="enabled"></ng-container>
-
-  </ng-container>
-
-  <ng-container *ngSwitchCase="'error'">
-
-    <ng-container *ngTemplateOutlet="haserror"></ng-container>
-
-  </ng-container>
-
-  <ng-container *ngSwitchDefault>
-
-    <ng-container *ngTemplateOutlet="haserror"></ng-container>
-
-  </ng-container>
-
-
-</ng-container>
-
-
-<ng-template #isloading>
-
-  <mat-spinner color="primary"></mat-spinner>
-
-</ng-template>
-
-<ng-template #enabled>
-
-  <app-summarycontainer></app-summarycontainer>
-
-  <artistscontainer></artistscontainer>
-
-  <app-musicreleasecontainer></app-musicreleasecontainer>
-
-
-
-
-</ng-template>
-
-<ng-template #haserror>
-
-  <div>Error Loading *******************************</div>
-
-</ng-template>
-
 
 
 
