@@ -31,7 +31,7 @@ collection = { count: 6, data: [] };
 
 
   displayTrackOptionsState$:Observable<ServiceState>
-            = this.trackService.trackserviceData$.pipe(
+            = this.trackService.trackserviceErrorData$.pipe(
               map(({ trackServiceState, trackDetails }) => {
 
               if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
