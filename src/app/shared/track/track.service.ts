@@ -49,6 +49,15 @@ export class TrackService {
 
     trackserviceData$ = this._trackserviceData$.asObservable();
 
+    private _trackserviceErrorData$:BehaviorSubject<TrackServiceData>
+                       = new BehaviorSubject({
+                             trackServiceState: ServiceState.INITIAL,
+                             trackDetails: null
+
+      });
+
+    trackserviceErrorData$ = this._trackserviceErrorData$.asObservable();
+
 
     constructor(private http: HttpClient) { }
 
@@ -92,6 +101,38 @@ export class TrackService {
                            .subscribe();
 
                }
+
+              getTrackByIDToDemoError(id: string)    {
+
+                                    this._trackserviceErrorData$.next( {
+                                        ...this._trackserviceErrorData$.value,
+                                        trackServiceState: ServiceState.IN_PROGRESS
+                                    });
+
+                                    return  this.http
+                                         .get<TrackCollection>(this.TRACK_API + '/'  + id , httpOptions)
+                                         .pipe(
+                                            tap(data => {
+                                                this._trackserviceErrorData$.next({
+                                                   ...this._trackserviceErrorData$.value,
+                                                   trackServiceState: ServiceState.SUCCESS,
+                                                   trackDetails: data
+                                                });
+                                            }),
+                                            catchError(err => {
+                                                this._trackserviceErrorData$.next({
+                                                  ...this._trackserviceErrorData$.value,
+                                                  trackServiceState: ServiceState.ERROR
+                                                });
+                                                return [];
+                                             })
+                                          )
+                                          .subscribe();
+
+                              }
+
+
+
 
 
 }
