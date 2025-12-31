@@ -17,10 +17,12 @@
 
 #errortext {
   padding-top:20px;
-  background-color: #f0f066;
+  background-color: #F08080;
+  font-weight: bold;
+
   font-size: 30px;
-  font-family: sans-serif;
- font-color: red;
+  font-family: arial;
+  color: #FF0000;
 }
 
 p {
