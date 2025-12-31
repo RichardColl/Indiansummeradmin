@@ -3,9 +3,8 @@
   <mat-card-content>
 
     <mat-card-header>
-      <mat-card-title><h2 id="header">Track  Container making calls by subscribing to the behaviourSubject using the async pipe method
-        to subscribe to an observable created by calling the
-        TrackService
+      <mat-card-title><h2 id="header">
+        TrackService call with deliberate error to demo error handling
 
       </h2></mat-card-title>
     </mat-card-header>
@@ -31,6 +30,18 @@
 
 
     </div>
+
+    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.ERROR">
+
+      <div id="errortext">
+            No Track available for this request !!!!!!!!!!!!!!!!
+
+      </div>
+
+
+
+    </div>
+
     <br><br><br>
 
     <div id="release">
