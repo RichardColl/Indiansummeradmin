@@ -12,6 +12,8 @@ import { IndiansummeradminComponent } from './indiansummeradmin/indiansummeradmi
 import { DisplayededitmusicreleaselistComponent } from './displayededitmusicreleaselist/displayededitmusicreleaselist.component';
 import { ArtistconnectionsComponent } from './artistconnections/artistconnections.component';
 import { MusicreleasescontainerComponent } from './musicreleasescontainer/musicreleasescontainer.component';
+import { StoreexampleComponent } from './storeexample/storeexample.component';
+
 
 
 const routes: Routes = [
@@ -40,6 +42,10 @@ const routes: Routes = [
                                                    }, {
                                                       path: 'showmusicreleasescontainer',
                                                              component: MusicreleasescontainerComponent
+
+                                                    }, {
+                                                      path: 'showstoreexampleComponent',
+                                                             component: StoreexampleComponent
 
                                                    }, {
                                                       path: 'login',

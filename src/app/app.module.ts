@@ -33,6 +33,7 @@ import { SummarycontainerComponent } from './summarycontainer/summarycontainer.c
 import { MusicreleasecontainerComponent } from './musicreleasecontainer/musicreleasecontainer.component';
 import { CreatemusicreleaseComponent } from './createmusicrelease/createmusicrelease.component';
 import { TrackscontainerComponent } from './trackscontainer/trackscontainer.component';
+import { StoreexampleComponent } from './storeexample/storeexample.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { TrackscontainerComponent } from './trackscontainer/trackscontainer.comp
     SummarycontainerComponent,
     MusicreleasecontainerComponent,
     CreatemusicreleaseComponent,
-    TrackscontainerComponent
+    TrackscontainerComponent,
+    StoreexampleComponent
   ],
   imports: [
     BrowserModule,
