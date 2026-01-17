@@ -47,7 +47,7 @@ export class TrackStore {
 
       });
 
-    //trackstoreData$ = this._trackserviceData$.asObservable();
+    trackstoreData$ = this._trackserviceData$.asObservable();
 
     constructor(private http: HttpClient, ) {
 
@@ -97,7 +97,7 @@ export class TrackStore {
 
                getDefaultTrack() : Observable<TrackServiceData> {
 
-                    return this._trackserviceData$.asObservable();
+                    return trackstoreData$;
 
                }
 
