@@ -24,6 +24,8 @@ export class StoreexampleComponent implements OnInit {
   trackDetails: TrackData;
 
 
+tracks$: Observable<TrackServiceData>;
+
    displayTrackOptionsState$:Observable<ServiceState>
               = this.tracks$.pipe(
                 map(({ trackServiceState, trackDetails }) => {
@@ -36,9 +38,6 @@ export class StoreexampleComponent implements OnInit {
                 return trackServiceState;
                 })
               );
-
-
- tracks$: Observable<TrackServiceData>;
 
   constructor(private trackStore: TrackStore) {
 
