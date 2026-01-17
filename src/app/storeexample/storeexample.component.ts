@@ -14,7 +14,7 @@ import { TrackServiceData } from '../shared/track.abstract.service';
 
 export class StoreexampleComponent implements OnInit {
 
-  tracks$: Observable<TrackData[]>;
+  tracks$: Observable<TrackServiceData[]>;
 
   constructor(private trackStore: TrackStore) {
 
