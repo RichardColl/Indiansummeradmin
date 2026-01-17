@@ -11,6 +11,11 @@ import { TrackData } from '../shared/track.abstract.service';
 
 import { TrackServiceData } from '../shared/track.abstract.service';
 
+@Component({
+  selector: 'storeexample',
+  templateUrl: './storeexample.component.html',
+  styleUrls: ['./storeexample.component.css']
+})
 
 export class StoreexampleComponent implements OnInit {
 
