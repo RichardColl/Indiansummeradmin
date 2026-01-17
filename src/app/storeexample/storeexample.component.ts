@@ -21,29 +21,11 @@ export class StoreexampleComponent implements OnInit {
   thedata:any;
   result = [];
 
-  ServiceStateEnum = ServiceState;
+
 
  tracks$: Observable<TrackServiceData>;
 
- displayTrackOptionsState$:Observable<ServiceState>
-             = this.tracks$.pipe(
-               map(({ trackServiceState, trackDetails }) => {
-
-               if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
-                 this.thedata = trackDetails;
-
-               }
-
-               return trackServiceState;
-               })
-          );
-
- trackDetails: TrackData;
-
-
   constructor(private trackStore: TrackStore) {
-
-
 
   }
 
@@ -54,8 +36,21 @@ export class StoreexampleComponent implements OnInit {
 
   reloadTracks() {
 
+      ServiceStateEnum = ServiceState;
+      trackDetails: TrackData;
+
       this.tracks$ = this.trackStore.getDefaultTrack();
 
+      this.tracks$.pipe(
+                     map(({ trackServiceState, trackDetails }) => {
+
+                     if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
+                       this.thedata = trackDetails;
+
+                     }
+
+                     })
+                );
 
   }
 
