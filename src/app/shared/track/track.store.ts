@@ -95,7 +95,7 @@ export class TrackStore {
 
                }
 
-               getDefaultTrack() : Observable<TrackServiceData[]> {
+               getDefaultTrack() : Observable<TrackServiceData> {
 
                     return this._trackserviceData$.asObservable();
 
