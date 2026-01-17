@@ -5,7 +5,6 @@ import { HttpHeaders } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { Observable , BehaviorSubject} from 'rxjs';
 import { TrackServiceData } from '../track.abstract.service';
-import { TrackData } from '../shared/track.abstract.service';
 import { ServiceState } from '../main-api.service';
 import { TrackCollection } from '../track.abstract.service';
 import { catchError, map, tap} from 'rxjs/operators';
@@ -96,7 +95,7 @@ export class TrackStore {
 
                }
 
-               getDefaultTrack() : Observable<TrackData[]> {
+               getDefaultTrack() : Observable<TrackServiceData[]> {
 
                     return trackstoreData$;
 
