@@ -6,10 +6,26 @@
   <div class="column" style="background-color:#aaa;">
     <h2>Column 1</h2>
     <p>data from artist observable</p>
+
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>Column 2</h2>
     <p>data from track observable</p>
+
+    <div *ngIf="( tracks$ | async) === ServiceStateEnum.IN_PROGRESS">
+      <mat-spinner color="primary"></mat-spinner>
+    </div>
+
+    <div *ngIf="( tracks$ | async) === ServiceStateEnum.SUCCESS">
+
+      <div class="tracks">Artist is : St.Etienne </div>
+      <div class="tracks">Album is : Sound of Water </div>
+
+
+
+
+    </div>
+
   </div>
 </div>
 

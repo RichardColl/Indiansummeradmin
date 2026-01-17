@@ -1,6 +1,6 @@
 #release {
 
-  background-color: #f0f0f0;
+  background-color: #ffA500;
 
 }
 
@@ -9,6 +9,17 @@
   background-color: #a0f0a0;
 
 }
+
+p {
+
+   color: #000000;
+
+   font-family: Arial, Impact, Charcoal, sans-serif;
+   font-size: 20px;
+   font-weight: bold;
+
+}
+
 
 
 
