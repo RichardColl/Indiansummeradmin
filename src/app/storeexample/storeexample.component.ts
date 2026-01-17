@@ -23,6 +23,7 @@ export class StoreexampleComponent implements OnInit {
 
   ServiceStateEnum = ServiceState;
 
+ tracks$: Observable<TrackServiceData>;
 
  displayTrackOptionsState$:Observable<ServiceState>
              = this.tracks$.pipe(
@@ -39,8 +40,6 @@ export class StoreexampleComponent implements OnInit {
 
  trackDetails: TrackData;
 
-
-  tracks$: Observable<TrackServiceData>;
 
   constructor(private trackStore: TrackStore) {
 
