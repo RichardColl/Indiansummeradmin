@@ -20,7 +20,8 @@ export class StoreexampleComponent implements OnInit {
   collection = { count: 6, data: [] };
   thedata:any;
   result = [];
-
+  ServiceStateEnum = ServiceState;
+  trackDetails: TrackData;
 
 
  tracks$: Observable<TrackServiceData>;
@@ -35,9 +36,6 @@ export class StoreexampleComponent implements OnInit {
   }
 
   reloadTracks() {
-
-      ServiceStateEnum = ServiceState;
-      trackDetails: TrackData;
 
       this.tracks$ = this.trackStore.getDefaultTrack();
 
