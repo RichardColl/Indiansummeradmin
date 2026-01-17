@@ -12,11 +12,11 @@
     <h2>Column 2</h2>
     <p>data from track observable</p>
 
-    <div *ngIf="( tracks$ | async) === ServiceStateEnum.IN_PROGRESS">
+    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
       <mat-spinner color="primary"></mat-spinner>
     </div>
 
-    <div *ngIf="( tracks$ | async) === ServiceStateEnum.SUCCESS">
+    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
       <div class="tracks">Artist is : St.Etienne </div>
       <div class="tracks">Album is : Sound of Water </div>
