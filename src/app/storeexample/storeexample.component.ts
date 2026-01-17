@@ -7,8 +7,6 @@ import { map, tap } from 'rxjs/operators';
 import { ServiceState } from '../shared/main-api.service';
 import { TrackData } from '../shared/track.abstract.service';
 
-
-
 import { TrackServiceData } from '../shared/track.abstract.service';
 
 @Component({
@@ -18,6 +16,29 @@ import { TrackServiceData } from '../shared/track.abstract.service';
 })
 
 export class StoreexampleComponent implements OnInit {
+
+  collection = { count: 6, data: [] };
+  thedata:any;
+  result = [];
+
+  ServiceStateEnum = ServiceState;
+
+
+ displayTrackOptionsState$:Observable<ServiceState>
+             = this.trackService.tracks$.pipe(
+               map(({ trackServiceState, trackDetails }) => {
+
+               if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
+                 this.thedata = trackDetails;
+
+               }
+
+               return trackServiceState;
+               })
+          );
+
+ trackDetails: TrackData;
+
 
   tracks$: Observable<TrackServiceData>;
 
@@ -35,6 +56,7 @@ export class StoreexampleComponent implements OnInit {
   reloadTracks() {
 
       this.tracks$ = this.trackStore.getDefaultTrack();
+
 
   }
 
