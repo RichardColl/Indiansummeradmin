@@ -25,7 +25,7 @@ export class StoreexampleComponent implements OnInit {
 
 
  displayTrackOptionsState$:Observable<ServiceState>
-             = this.trackService.tracks$.pipe(
+             = this.tracks$.pipe(
                map(({ trackServiceState, trackDetails }) => {
 
                if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
