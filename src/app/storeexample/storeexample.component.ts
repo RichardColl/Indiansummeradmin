@@ -44,8 +44,11 @@ export class StoreexampleComponent implements OnInit {
 
                      if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
                        this.thedata = trackDetails;
+                       console.log("&&&&&&&&&&&&&&&&");
+                       console.log(trackDetails);
 
                      }
+                     console.log("***********************");
 
                      })
                 );
