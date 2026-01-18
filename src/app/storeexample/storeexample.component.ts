@@ -19,21 +19,26 @@ export class StoreexampleComponent implements OnInit {
 
   collection = { count: 6, data: [] };
   thedata:any;
+  theartistdata:any;
   result = [];
   ServiceStateEnum = ServiceState;
   trackDetails: TrackData;
+  artistDetails: ArtistData;
 
 
 displayTrackStoreOptionsState$:Observable<ServiceState>;
 
+displayArtistStoreOptionsState$:Observable<ServiceState>;
 
-  constructor(private trackStore: TrackStore) {
+
+  constructor(private trackStore: TrackStore, private artistStore: ArtistStore) {
 
   }
 
   ngOnInit() {
 
       this.reloadTracks();
+      this.reloadDefaultArtist();
   }
 
   reloadTracks() {
@@ -49,5 +54,21 @@ displayTrackStoreOptionsState$:Observable<ServiceState>;
        );
 
   }
+
+
+  reloadDefaultArtist() {
+
+        this.displayArtistStoreOptionsState$ = this.artistStore.getDefaultArtist().pipe(map(({ artistServiceState, artistDetails }) => {
+
+        if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
+                  this.artistdata = artistDetails;
+
+           }
+              return artistServiceState;
+         })
+         );
+
+    }
+
 
 }
