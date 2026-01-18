@@ -1,42 +1,15 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title><h2>Stateful Store management example</h2></mat-card-title>
-  </mat-card-header>
 
-  <mat-card-content>
-
-  <h2>Stateful Store management example making calls to the TrackStore in memory rather than the call to the Stateless
-TrackService as the home page does</h2>
+<h2>Stateful Store management example making calls to the TrackStore in memory rather than the call to the Stateless
+  TrackService as the home page does</h2>
 <p>Left hand column , right hand column displays data from the TrackStore, the Observable here is initialised
-by the TrackStore singleton which gets initialise once and subsequent calls to this page will not make any back end calls
-to access the data unlike because it is Stateful and data held in memory unlike the calls on the home page which are
-Stateless and need to call the backend service everytime you hit the page</p>
+  by the TrackStore singleton which gets initialise once and subsequent calls to this page will not make any back end calls
+  to access the data unlike because it is Stateful and data held in memory unlike the calls on the home page which are
+  Stateless and need to call the backend service everytime you hit the page</p>
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Column 1</h2>
     <p>data from artist Store observable</p>
-
-    <div *ngIf="( displayArtistStoreOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
-      <mat-spinner color="primary"></mat-spinner>
-    </div>
-
-    <div *ngIf="( displayArtistStoreOptionsState$ | async) === ServiceStateEnum.SUCCESS">
-
-      <div id="release" fxLayout="row" fxLayoutGap="10">
-        <div fxFlex="20%">
-          <a id="gotoartist" [routerLink]="['/editartistform', artistdata.id]" >
-            <img   src="https://indiansummerrecordsserver.herokuapp.com/images/{{artistdata.menuimage}}" alt="photo" width="5%" height="5%"/></a>
-        </div>
-        <div fxFlex="80%">
-          <h3>{{artistdata.name}}</h3>
-
-        </div>
-      </div>
-
-    </div>
-
-
 
   </div>
   <div class="column" style="background-color:#bbb;">
@@ -68,12 +41,6 @@ Stateless and need to call the backend service everytime you hit the page</p>
   </div>
 </div>
 
-  </mat-card-content>
-</mat-card>
-
-
-
-
 
 <mat-toolbar color="primary">
   <button mat-button routerLink="/indiansummeradmin">Admin home</button>
@@ -81,5 +48,3 @@ Stateless and need to call the backend service everytime you hit the page</p>
 
 
 </mat-toolbar>
-
-
