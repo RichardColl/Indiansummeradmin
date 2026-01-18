@@ -23,3 +23,31 @@
     width: 100%;
   }
 }
+
+
+.tracks {
+    font-family: 'Courier New', monospace;
+    background-color: beige;
+    border: 2px solid green;
+     font-size: 25px;
+       font-weight: bold;
+  }
+
+
+#release {
+  padding-top:20px;
+  background-color: #f0f066;
+  font-size: 30px;
+  font-family: sans-serif;
+
+}
+
+
+p {
+
+   color: #000000;
+
+   font-family: Arial, Impact, Charcoal, sans-serif;
+   font-size: 20px;
+
+}

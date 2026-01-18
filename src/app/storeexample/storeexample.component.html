@@ -1,6 +1,10 @@
 
-<h2>Responsive Two Column Layout</h2>
-<p>Resize the browser window to see the responsive effect (the columns will stack on top of each other instead of floating next to each other, when the screen is less than 600px wide).</p>
+<h2>Stateful Store management example making calls to the TrackStore in memory rather than the call to the Stateless
+TrackService as the home page does</h2>
+<p>Left hand column , right hand column displays data from the TrackStore, the Observable here is initialised
+by the TrackStore singleton which gets initialise once and subsequent calls to this page will not make any back end calls
+to access the data unlike because it is Stateful and data held in memory unlike the calls on the home page which are
+Stateless and need to call the backend service everytime you hit the page</p>
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">
@@ -12,19 +16,23 @@
     <h2>Column 2</h2>
     <p>data from track observable</p>
 
-    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+    <div *ngIf="( displayTrackStoreOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
       <mat-spinner color="primary"></mat-spinner>
     </div>
 
-    <div *ngIf="( displayTrackOptionsState$ | async) === ServiceStateEnum.SUCCESS">
+    <div *ngIf="( displayTrackStoreOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
       <div class="tracks">Artist is : St.Etienne </div>
       <div class="tracks">Album is : Sound of Water </div>
+
       <div class="tracks">Track Number is :
         {{thedata.trackno}}</div>
 
       <div class="tracks">Track Title is :
         {{thedata.title}}</div>
+
+      <div class="tracks">Track Length is :
+        {{thedata.length}}</div>
 
 
 
