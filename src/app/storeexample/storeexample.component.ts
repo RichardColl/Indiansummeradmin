@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TrackStore } from '../shared/track/track.store';
+import { ArtistStore } from '../shared/artist/artist.store';
 
 import { Observable } from 'rxjs/Observable';
 import { map, tap } from 'rxjs/operators';
@@ -61,7 +62,7 @@ displayArtistStoreOptionsState$:Observable<ServiceState>;
         this.displayArtistStoreOptionsState$ = this.artistStore.getDefaultArtist().pipe(map(({ artistServiceState, artistDetails }) => {
 
         if(artistServiceState === this.ServiceStateEnum.SUCCESS) {
-                  this.artistdata = artistDetails;
+                  this.theartistdata = artistDetails;
 
            }
               return artistServiceState;
