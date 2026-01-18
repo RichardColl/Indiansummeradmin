@@ -36,9 +36,11 @@
 
 #release {
   padding-top:20px;
+  padding-left:20px;
   background-color: #f0f066;
   font-size: 30px;
   font-family: sans-serif;
+  border: 2px solid green;
 
 }
 
