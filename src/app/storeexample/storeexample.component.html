@@ -1,5 +1,11 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>Stateful Store management example</h2></mat-card-title>
+  </mat-card-header>
 
-<h2>Stateful Store management example making calls to the TrackStore in memory rather than the call to the Stateless
+  <mat-card-content>
+
+  <h2>Stateful Store management example making calls to the TrackStore in memory rather than the call to the Stateless
 TrackService as the home page does</h2>
 <p>Left hand column , right hand column displays data from the TrackStore, the Observable here is initialised
 by the TrackStore singleton which gets initialise once and subsequent calls to this page will not make any back end calls
@@ -9,12 +15,12 @@ Stateless and need to call the backend service everytime you hit the page</p>
 <div class="row">
   <div class="column" style="background-color:#aaa;">
     <h2>Column 1</h2>
-    <p>data from artist observable</p>
+    <p>data from artist Store observable</p>
 
   </div>
   <div class="column" style="background-color:#bbb;">
     <h2>Column 2</h2>
-    <p>data from track observable</p>
+    <p>data from track Store observable</p>
 
     <div *ngIf="( displayTrackStoreOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
       <mat-spinner color="primary"></mat-spinner>
@@ -40,4 +46,19 @@ Stateless and need to call the backend service everytime you hit the page</p>
 
   </div>
 </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/indiansummeradmin">Admin home</button>
+  <button mat-button routerLink="/artistconnectionscomponent, artist.id">Artist list</button>
+
+
+</mat-toolbar>
+
 
