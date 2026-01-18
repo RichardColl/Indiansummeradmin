@@ -34,7 +34,6 @@ displayArtistStoreOptionsState$:Observable<ServiceState>;
 
 
   constructor(private trackStore: TrackStore, private artistStore: ArtistStore) {
-  constructor(private trackStore: TrackStore) {
 
   }
 
