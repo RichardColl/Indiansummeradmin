@@ -43,8 +43,9 @@ export class ArtistStore {
     private _artistserviceData$:BehaviorSubject<ArtistServiceData>
                            = new BehaviorSubject({
                                     artistServiceState: ServiceState.INITIAL,
-                                    artistDetails: null
-
+                                    artistDetails: null,
+                                    artistComboDetails: null,
+                                    artistMonoDetails: null
 
       });
 

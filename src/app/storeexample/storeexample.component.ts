@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { map, tap } from 'rxjs/operators';
 import { ServiceState } from '../shared/main-api.service';
 import { TrackData } from '../shared/track.abstract.service';
-
+import { ArtistData } from '../shared/artist.abstract.service';
 import { TrackServiceData } from '../shared/track.abstract.service';
 
 @Component({
