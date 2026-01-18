@@ -40,22 +40,18 @@ displayTrackOptionsState$:Observable<ServiceState>;
 
   reloadTracks() {
 
-      this.tracks$ = this.trackStore.getDefaultTrack();
+      this.displayTrackOptionsState$ = this.trackStore.getDefaultTrack().pipe(map(({ trackServiceState, trackDetails }) => {
 
-      this.displayTrackOptionsState$:Observable<ServiceState>
-                    = this.tracks$.pipe(
-                      map(({ trackServiceState, trackDetails }) => {
+                                                                            if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
+                                                                              this.thedata = trackDetails;
 
-                      if(trackServiceState === this.ServiceStateEnum.SUCCESS) {
-                        this.thedata = trackDetails;
+                                                                            }
 
-                      }
+                                                                            return trackServiceState;
+                                                                            })
+                                                                   );
 
-                      return trackServiceState;
-                      })
-             );
-
-
+      
   }
 
 }
