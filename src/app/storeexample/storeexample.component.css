@@ -24,6 +24,12 @@
   }
 }
 
+body {
+        background-color: #dddddd;
+
+  }
+
+
 
 .tracks {
     font-family: 'Courier New', monospace;

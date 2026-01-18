@@ -32,11 +32,11 @@ export class ArtistStore {
     //also on construction we pass it its initial value , by default at the loading of the component
     //subscribing to this BehaviorSubject the initial values below are the values emitted
 
-    //outside of this service we do not want components or other services directly accessing the  _serviceData$
+    //outside of this service we do not want components or other services directly accessing the  _artistserviceData$
     //BehaviorSubject. its best practise to make it private as above and then as below declare a publically accessible
-    //Observable
+    //Observable artistDataStore$
     //reason being you don't want outside users to access and potentially use the .next()  BehaviorSubject function to emit
-    //their own values or redefine  _serviceData$.
+    //their own values or redefine  _artistserviceData$.
     //the artist service should have full control over its private BehaviorSubject and outsiders should just use the publically
     //declared Observable which they can only subscribe to and not interfere with its behaviour.
 
