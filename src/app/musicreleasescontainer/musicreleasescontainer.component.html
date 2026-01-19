@@ -4,9 +4,9 @@
 
     <mat-card-header>
       <mat-card-title><h2 id="header">  Artist Container RXJS using Async pipe subscibe and async backend calls
-using  Java Reactive and Mono stream with first call and 2nd async call aggregating mono streams to a third object.
-      These behavioursubject observables emit the IN_PROGRESS value while waiting for response allowing the page
-      to display mat spinner while waiting.</h2></mat-card-title>
+        using  Java Reactive and Mono stream with first call and 2nd async call aggregating mono streams to a third object.
+        These behavioursubject observables emit the IN_PROGRESS value while waiting for response allowing the page
+        to display mat spinner while waiting.</h2></mat-card-title>
     </mat-card-header>
 
 
@@ -16,21 +16,27 @@ using  Java Reactive and Mono stream with first call and 2nd async call aggregat
 
     <div *ngIf="( displayMonoArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
 
-        <div id="release" fxLayout="row" fxLayoutGap="10">
-          <div fxFlex="20%">
-            <a id="gotoartist" [routerLink]="['/editartistform', theMonodata.id]" >
-              <img   src="https://indiansummerrecordsserver.herokuapp.com/images/{{theMonodata.menuimage}}" alt="photo" width="5%" height="5%"/></a>
-          </div>
-          <div fxFlex="80%">
-            <h3>{{theMonodata.name}}</h3>
-            <p>first call here to getMonoArtistByID </p>
-          </div>
+      <div id="release" fxLayout="row" fxLayoutGap="10">
+        <div fxFlex="20%">
+          <a id="gotoartist" [routerLink]="['/editartistform', theMonodata.id]" >
+            <img   src="https://indiansummerrecordsserver.herokuapp.com/images/{{theMonodata.menuimage}}" alt="photo" width="5%" height="5%"/></a>
         </div>
+        <div fxFlex="80%">
+          <h3>{{theMonodata.name}}</h3>
+          <p>first call here to getMonoArtistByID </p>
+        </div>
+      </div>
 
     </div>
 
 
-    <div *ngIf="( display<a>o getComboMonoArtistByID where we get 2 artists  back and we aggregate results into a 3rd object  </h3>
+    <div *ngIf="( displayComboArtistsOptionsState$ | async) === ServiceStateEnum.IN_PROGRESS">
+      <mat-spinner color="primary"></mat-spinner>
+    </div>
+
+    <div *ngIf="( displayComboArtistsOptionsState$ | async) === ServiceStateEnum.SUCCESS">
+
+      <h3>secound call here to getComboMonoArtistByID where we get 2 artists  back and we aggregate results into a 3rd object  </h3>
 
       <div id="comborelease" fxLayout="row" fxLayoutGap="10">
         <div fxFlex="20%">
@@ -65,9 +71,9 @@ using  Java Reactive and Mono stream with first call and 2nd async call aggregat
     </div>
 
     <div id="mainsite">
-       <a href="https://indiansummerrecords.herokuapp.com/">
-         <p>Click here to go to main site , web responsive  suitable for mobile phones >>></p>
-        </a>
+      <a href="https://indiansummerrecords.herokuapp.com/">
+        <p>Click here to go to main site , web responsive  suitable for mobile phones >>></p>
+      </a>
 
     </div>
 
