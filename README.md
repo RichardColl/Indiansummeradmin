@@ -21,6 +21,7 @@ monoComboFindByArtistId
 are invoking the Java React libraries on the back end to make async calls and to aggregate two calls 
 for combined data results. code below:
 
+
 import reactor.core.publisher.Mono;
 .....
 
@@ -68,6 +69,10 @@ import reactor.core.publisher.Mono;
         return combinedArtist;
     }
 
+    import reactor.core.publisher.Mono;
+    import org.springframework.web.reactive.function.client.WebClient;
+    
+    
     public Mono<Artist> getArtistByIdMono(String id){
     
             return webClient.get()
