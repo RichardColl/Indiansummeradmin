@@ -20,6 +20,12 @@
 
       </span></div>
 
+      <div *ngIf="isFieldInvalid('maxLength')">
+        <span class="errmsg" *ngIf="this.title.hasError('maxLength')">
+                  You have exceeed the maxlength of 10
+
+      </span></div>
+
       <div class="fieldcaptions">Artist ID</div>
 
       <div><input  formControlName="artistid"

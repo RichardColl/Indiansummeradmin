@@ -49,7 +49,7 @@ export class CreatemusicreleaseComponent implements OnInit {
               {
                 validators: [
                   Validators.required,
-                  Validators.maxLength(100)
+                  Validators.maxLength(10)
                 ]
               }
           ],
