@@ -367,7 +367,7 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.musicrelease.datepaid= this.musicReleaseForm.value.datepaid;
 
         this.result = "successful Create -- musicrelease ";
-        window.location.reload();
+
 
          // this.musicreleaseServ.save(this.musicrelease)
          //                        .subscribe(
