@@ -366,18 +366,20 @@ export class CreatemusicreleaseComponent implements OnInit {
         this.musicrelease.invoiceno= this.musicReleaseForm.value.invoiceno;
         this.musicrelease.datepaid= this.musicReleaseForm.value.datepaid;
 
+        this.result = "successful Create -- musicrelease ";
+        window.location.reload();
 
-          this.musicreleaseServ.save(this.musicrelease)
-                                 .subscribe(
-                                     data => {
-                                     if (data) {
-                                          this.result = "successful Create -- musicrelease ";
-                                      }
-                                      window.location.reload();
-                                     },
-                                     error => {
-                                        this.result = "create musicrelease  failed";
-                                     });
+         // this.musicreleaseServ.save(this.musicrelease)
+         //                        .subscribe(
+         //                            data => {
+        //                             if (data) {
+         //                                 this.result = "successful Create -- musicrelease ";
+       //                               }
+       //                               window.location.reload();
+       //                              },
+       //                              error => {
+       //                                 this.result = "create musicrelease  failed";
+       //                              });
 
 
       }
