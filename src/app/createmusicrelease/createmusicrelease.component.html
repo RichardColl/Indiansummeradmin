@@ -16,9 +16,15 @@
 
       <div *ngIf="isFieldInvalid('title')">
         <span class="errmsg" *ngIf="this.title.hasError('required')">
-                  Title is a required field
+                  The Title is a required field
 
       </span>
+
+        <span class="errmsg" *ngIf="this.title.hasError('minLength')">
+                  You have not reached  the minLength of 4
+
+      </span>
+
         <span class="errmsg" *ngIf="this.title.hasError('maxLength')">
                   You have exceeed the maxlength of 10
 
