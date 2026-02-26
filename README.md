@@ -82,11 +82,19 @@ import reactor.core.publisher.Mono;
     
         }
 
-
+##Angular v12 and Signals
+There is also a link to another app on netlify which is using Signals instead of RXJS BehaviourSubject for state
+management, the ArtistService is converted to Artist which is using Signals but is make the same backend calls
+to the spring boot server and dealing with the same data.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Reactive form validation
+
+example just validating title field in CreatemusicreleaseComponent
+
 
 ## Code scaffolding
 

@@ -8,9 +8,21 @@
           padding-top: 10px;
           padding-bottom: 10px;
            background-color: #dddddd;
-
+          font-size: 15px;
+             font-weight: bold;
 
   }
+
+  #signal {
+            padding-top: 10px;
+            padding-bottom: 10px;
+             background-color: #ffcbd1;
+             font-size: 15px;
+                font-weight: bold;
+
+
+    }
+
 
 #comborelease {
 
